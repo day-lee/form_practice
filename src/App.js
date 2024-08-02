@@ -46,8 +46,9 @@ function App() {
       );
       setFormValues(INITIAL_DATA);
     } else {
-      alert(`Successfully logged in as ${email}`);
       setFormValues(INITIAL_DATA);
+      alert(`Successfully logged in as ${email}`);
+      setIsError(false);
     }
   };
 
