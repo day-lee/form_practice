@@ -8,6 +8,8 @@ const INITIAL_DATA = { email: "", password: "" };
 function App() {
   const [formValues, setFormValues] = useState(INITIAL_DATA);
   const [errorEmail, setErrorEmail] = useState("");
+  const [errorPassword, setErrorPassword] = useState("");
+  const [isError, setIsError] = useState(false);
   const [isDisabled, setIsDisabled] = useState(false);
   const { email, password } = formValues;
 
@@ -23,19 +25,28 @@ function App() {
       if (validateEmail(value)) {
         setErrorEmail("");
         setIsDisabled(false);
-      } else {
       }
     }
 
     console.log(value);
+    console.log(typeof value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (validateEmail(email)) {
-      alert(`Successfully logged in as ${email}`);
-    } else {
+    //
+    if (!validateEmail(email)) {
       setErrorEmail("Please enter a valid username.");
+      setIsError(true);
+      setFormValues(INITIAL_DATA);
+    } else if (password !== "1") {
+      setIsError(true);
+      setErrorPassword(
+        "Wrong email or password. Try again or create an account."
+      );
+      setFormValues(INITIAL_DATA);
+    } else {
+      alert(`Successfully logged in as ${email}`);
       setFormValues(INITIAL_DATA);
     }
   };
@@ -58,7 +69,11 @@ function App() {
               <div>
                 <label htmlFor="email"></label>
                 <input
-                  className="w-[352px] h-[52px] border border-solid border-slate-500 rounded p-2 mt-1 "
+                  className={`w-[352px] h-[52px]  rounded p-2 mt-1 ${
+                    !isError
+                      ? "border border-solid border-slate-500"
+                      : "border border-2 border-red-500"
+                  }`}
                   id="email"
                   name="email"
                   type="text"
@@ -68,7 +83,7 @@ function App() {
                   placeholder="Email"
                 />
                 {errorEmail && (
-                  <p className="text-themered text-[14px] font-medium">
+                  <p className="text-themered text-[14px] font-semibold">
                     {errorEmail}
                   </p>
                 )}
@@ -76,7 +91,11 @@ function App() {
               <div>
                 <label htmlFor="password"></label>
                 <input
-                  className="w-[352px] h-[52px] border border-solid border-slate-500 rounded p-2 mt-4 mb-4"
+                  className={`w-[352px] h-[52px]  rounded p-2 mt-5 ${
+                    !isError
+                      ? "border border-solid border-slate-500"
+                      : "border border-2 border-red-500"
+                  }`}
                   id="password"
                   name="password"
                   type="password"
@@ -85,6 +104,11 @@ function App() {
                   onChange={onInputChange}
                   placeholder="Password"
                 />
+                {errorPassword && (
+                  <p className="text-themered text-[14px] font-semibold">
+                    {errorPassword}
+                  </p>
+                )}
               </div>
               <button
                 className="bg-white text-themeblue font-semibold p-1
