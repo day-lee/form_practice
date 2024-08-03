@@ -2,6 +2,7 @@ import "./App.css";
 import LoginForm from "./components/LoginForm";
 import linkedin from "./assets/linkedin-logo.png";
 import { useState } from "react";
+import ZoomPage from "./components/ZoomPage";
 
 const INITIAL_DATA = { email: "", password: "" };
 function App() {
@@ -60,40 +61,57 @@ function App() {
   };
 
   return (
-    <div className="flex-col relative h-screen">
-      <div className="">
-        <p className="text-2xl mb-[500px] pt-10 pb-10 px-10">
-          Clone coding: Linkedin Login Form
-        </p>
-      </div>
+    <>
+      <div className="flex flex-col relative">
+        <div className="">
+          <p className="text-2xl mb-[500px] pt-10 px-10">
+            Clone coding: Linkedin login form
+          </p>
+        </div>
 
-      <div className="flex justify-center items-center flex-grow">
-        <div className="absolute bg-white px-5 py-10 pl-[85px]">
-          <img className="mb-4" src={linkedin} alt="linkedinlogo" />
+        <div className="flex justify-center items-center flex-grow">
+          <div className="absolute bg-white px-5 pt-10 pl-[85px]">
+            <img className="mb-4" src={linkedin} alt="linkedinlogo" />
 
-          <div className="bg-white pt-15 px-16 py-5 justify-center w-[534px] h-[846px]">
-            <h1 className="text-[32px] font-semibold">Sign in</h1>
-            <p className="font-normal mt-1 mb-6 text-[14px]">
-              Stay updated on your professional world.
-            </p>
-            <div className="w-[352px] h-[536px]">
-              <LoginForm
-                email={email}
-                password={password}
-                errorPassword={errorPassword}
-                errorEmail={errorEmail}
-                isError={isError}
-                isDisabled={isDisabled}
-                isShow={isShow}
-                onChange={onInputChange}
-                onSubmit={handleSubmit}
-                onShow={showHandle}
-              />
+            <div className="bg-white pt-15 px-16 py-5 justify-center w-[534px] h-[700px]">
+              <h1 className="text-[32px] font-semibold">Sign in</h1>
+              <p className="font-normal mt-1 mb-6 text-[14px]">
+                Stay updated on your professional world.
+              </p>
+              <div className="w-[352px] h-[536px]">
+                <LoginForm
+                  email={email}
+                  password={password}
+                  errorPassword={errorPassword}
+                  errorEmail={errorEmail}
+                  isError={isError}
+                  isDisabled={isDisabled}
+                  isShow={isShow}
+                  onChange={onInputChange}
+                  onSubmit={handleSubmit}
+                  onShow={showHandle}
+                />
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+
+      <div className=" pt-[500px]">
+        <p className="text-2xl pt-10 pb-10 px-10">
+          Clone coding: Zoom login form
+        </p>
+      </div>
+
+      <div className="flex justify-center items-center flex-grow mt-[5px]">
+        <div className="bg-white pt-15 px-16 py-5 justify-center w-full h-[700px]">
+          <div className="w-[352px] h-[536px]">
+            {" "}
+            <ZoomPage />
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
 
