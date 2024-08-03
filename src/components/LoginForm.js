@@ -1,5 +1,6 @@
 import google from "../assets/google-logo.png";
 import apple from "../assets/apple-logo.png";
+import LoginInputBtn from "./LoginInputBtn";
 
 function LoginForm({
   email,
@@ -13,6 +14,7 @@ function LoginForm({
   onSubmit,
   onShow,
 }) {
+  console.log(LoginInputBtn);
   const googleHandle = () => {
     window.open(
       "https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Faccounts.google.com%2Fgsi%2Fselect%3Fclient_id%3D990339570472-k6nqn1tpmitg8pui82bfaun3jrpmiuhs.apps.googleusercontent.com%26auto_select%3Dfalse%26ux_mode%3Dpopup%26ui_mode%3Dcard%26context%3Dsignin%26as%3Dj36xhruNcEKnS83Olo%252BCDw%26channel_id%3Db9d9c32e7fea98d9512405769e55afd3dcaa9731f29c56be8b33f93921901229%26origin%3Dhttps%3A%2F%2Fwww.linkedin.com&faa=1&ifkv=AdF4I75Pg8vgU6g3iw0fwg4_gHsZKYFxwTT7SbqAl8MPScchLy9nm61kEYdNDFvKTK4l0lXK2hlXZQ&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S673158336%3A1722630480496456&ddm=0",
@@ -33,13 +35,6 @@ function LoginForm({
     window.open("https://www.linkedin.com/signup/cold-join", "_blank");
   };
 
-  const forgotHandle = () => {
-    window.open(
-      "https://www.linkedin.com/checkpoint/rp/request-password-reset",
-      "_blank"
-    );
-  };
-
   const onInputChange = (e) => {
     onChange(e);
   };
@@ -55,80 +50,18 @@ function LoginForm({
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="email"></label>
-          <input
-            className={`w-[352px] h-[52px]  rounded p-2 mt-1 ${
-              !isError
-                ? "border border-solid border-slate-500"
-                : "border border-2 border-red-500"
-            }`}
-            id="email"
-            name="email"
-            type="text"
-            value={email}
-            required
-            onChange={onInputChange}
-            placeholder="Email"
-          />
-          {errorEmail && (
-            <p className="text-themered text-[14px] font-semibold">
-              {errorEmail}
-            </p>
-          )}
-        </div>
+        <LoginInputBtn
+          email={email}
+          password={password}
+          errorEmail={errorEmail}
+          errorPassword={errorPassword}
+          isError={isError}
+          isShow={isShow}
+          isDisabled={isDisabled}
+          onInputChangeHandle={onInputChange}
+          onShowHandle={showHandle}
+        />
 
-        <div className="relative w-full ">
-          <label htmlFor="password"></label>
-          <input
-            className={`w-full w-[352px] h-[52px]  rounded p-2 mt-5 ${
-              !isError
-                ? "border border-solid border-slate-500"
-                : "border border-2 border-red-500"
-            }`}
-            id="password"
-            name="password"
-            type={isShow ? "text" : "password"}
-            value={password}
-            required
-            onChange={onInputChange}
-            placeholder="Password"
-          />
-          <div className="absolute h-[30px] inset-y-0 flex right-0 mt-8 items-center pr-3">
-            <button
-              className="text-themeblue font-medium 
-             hover:bg-themelightblue hover:border-themeblue hover:rounded-3xl hover: pl-2 pr-2 "
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              onClick={showHandle}
-              type="button"
-            >
-              {!isShow ? "show" : "hide"}
-            </button>
-          </div>
-          <div>
-            {errorPassword && (
-              <p className="text-themered text-[14px] font-semibold">
-                {errorPassword}
-              </p>
-            )}
-          </div>
-        </div>
-
-        <button
-          className="bg-white text-themeblue font-semibold p-1 mt-1
-       hover:bg-themelightblue hover:border-themelightblue hover:rounded-3xl"
-          onClick={forgotHandle}
-        >
-          Forgot password?
-        </button>
-        <button
-          className="w-[352px] bg-themeblue p-3 rounded-3xl font-semibold text-white mt-5 mb-3 hover:bg-hoverblue"
-          type="submit"
-          disabled={isDisabled}
-        >
-          Sign in
-        </button>
         <div className="flex justify-center text-[14px] text-center text-themgray">
           <span className="block border-b border-gray w-1/2 mx-auto mb-2"></span>
           <span> &nbsp;&nbsp;or&nbsp;&nbsp; </span>
