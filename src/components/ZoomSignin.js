@@ -15,6 +15,7 @@ function ZoomSignin() {
     window.open("https://zoom.us/signin#/forgot-password", "_blank");
   };
   const helpHandle = () => {};
+
   return (
     <>
       <div>
@@ -24,25 +25,25 @@ function ZoomSignin() {
 
         <div>
           <p>Sign In</p>
-          <form onSubmit={submitHandle}>
+          <form onSubmit={submitHandle} id="zoomForm">
             <div>
               <label htmlFor="email"></label>
               <input
                 type="text"
-                id="email"
-                name="email"
+                id="zoomemail"
+                name="zoomemail"
                 onChange={onInputChange}
                 placeholder="Email Address"
               />
-              <div className="">
+              <div className="p-2">
                 "error msg: Please enter your email address "
               </div>
 
               <label htmlFor="password"></label>
               <input
                 type="password"
-                id="password"
-                name="password"
+                id="zoompassword"
+                name="zoompassword"
                 onChange={onInputChange}
                 placeholder="Password"
               />
@@ -59,7 +60,7 @@ function ZoomSignin() {
               <img src={openwindow} alt="open-window" />
             </div>
 
-            <div className="">
+            <div className="p-2">
               "error msg: Incorrect email or password. Enter your sign in
               information again, or request an email to gain access to your
               account."
@@ -68,7 +69,7 @@ function ZoomSignin() {
             <button> Sign In</button>
             <div>
               <p>
-                By signing in, I agree to the{" "}
+                By signing in, I agree to the
                 <span>Zoom's Privacy Statement</span>
                 and <span>Terms of Service.</span>
               </p>

@@ -1,6 +1,6 @@
 import google from "../assets/google-logo.png";
 import apple from "../assets/apple-logo.png";
-import LoginInputBtn from "./LoginInputBtn";
+import LoginInputBtn from "./LoginInputBtn.js";
 
 function LoginForm({
   email,
@@ -14,7 +14,7 @@ function LoginForm({
   onSubmit,
   onShow,
 }) {
-  console.log(LoginInputBtn);
+  //console.log(LoginInputBtn);
   const googleHandle = () => {
     window.open(
       "https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Faccounts.google.com%2Fgsi%2Fselect%3Fclient_id%3D990339570472-k6nqn1tpmitg8pui82bfaun3jrpmiuhs.apps.googleusercontent.com%26auto_select%3Dfalse%26ux_mode%3Dpopup%26ui_mode%3Dcard%26context%3Dsignin%26as%3Dj36xhruNcEKnS83Olo%252BCDw%26channel_id%3Db9d9c32e7fea98d9512405769e55afd3dcaa9731f29c56be8b33f93921901229%26origin%3Dhttps%3A%2F%2Fwww.linkedin.com&faa=1&ifkv=AdF4I75Pg8vgU6g3iw0fwg4_gHsZKYFxwTT7SbqAl8MPScchLy9nm61kEYdNDFvKTK4l0lXK2hlXZQ&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S673158336%3A1722630480496456&ddm=0",
@@ -49,7 +49,7 @@ function LoginForm({
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form id="linkedinform" onSubmit={handleSubmit}>
         <LoginInputBtn
           email={email}
           password={password}
