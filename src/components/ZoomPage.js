@@ -11,15 +11,34 @@ import ZoomSignin from "./ZoomSignin";
 import ZoomSsoList from "./ZoomSsoList";
 import zoomhelpbf from "../assets/zoom-help-1.png";
 import zoomhelpaf from "../assets/zoom-help-2.png";
+import { useState } from "react";
 
 function ZoomPage() {
+  const [isHelp, setIsHelp] = useState(false);
+  const [isHoverd, setIsHovered] = useState(false);
+
+  const helpHandle = () => {
+    setIsHelp(true);
+  };
+
+  const HandleHover = () => {
+    setIsHovered(!isHoverd);
+  };
+
   return (
     <>
       <ZoomHeader />
-      <ZoomSignin />
+      <ZoomSignin help={isHelp} helpHandle={helpHandle} />
       <ZoomSsoList />
-      <img src={zoomhelpbf} alt="zoomHelpBf" />
-      <img src={zoomhelpaf} alt="zoomHelpAf" />
+      <button onMouseEnter={HandleHover} onMouseLeave={HandleHover}>
+        {isHelp && (
+          <img
+            className="b-2"
+            src={isHoverd ? zoomhelpaf : zoomhelpbf}
+            alt="help"
+          />
+        )}
+      </button>
     </>
   );
 }

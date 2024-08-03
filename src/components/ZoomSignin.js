@@ -3,9 +3,12 @@ import openwindow from "../assets/window-open.png";
 import passwordHide from "../assets/eye-password-hide-svgrepo-com.svg";
 import passwordShow from "../assets/eye-password-show-svgrepo-com.svg";
 import info from "../assets/circle-information-svgrepo-com.svg";
+import { useState } from "react";
 
-function ZoomSignin() {
-  const onInputChange = () => {};
+function ZoomSignin({ help, helpHandle }) {
+  const onInputChange = () => {
+    console.log("input");
+  };
 
   const submitHandle = (e) => {
     e.preventDefault();
@@ -14,7 +17,10 @@ function ZoomSignin() {
   const forgotHandle = () => {
     window.open("https://zoom.us/signin#/forgot-password", "_blank");
   };
-  const helpHandle = () => {};
+
+  const helpClickHandle = () => {
+    helpHandle();
+  };
 
   return (
     <>
@@ -55,8 +61,10 @@ function ZoomSignin() {
             </div>
 
             <div>
-              <button onClick={forgotHandle}>Forgot password?</button>
-              <button onClick={helpHandle}>Help </button>
+              <button className="p-2" onClick={forgotHandle}>
+                Forgot password?
+              </button>
+              <button onClick={helpClickHandle}>Help </button>
               <img src={openwindow} alt="open-window" />
             </div>
 
