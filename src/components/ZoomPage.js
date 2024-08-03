@@ -21,7 +21,7 @@ function ZoomPage() {
     setIsHelp(true);
   };
 
-  const HandleHover = () => {
+  const handleHover = () => {
     setIsHovered(!isHoverd);
   };
 
@@ -30,7 +30,7 @@ function ZoomPage() {
       <ZoomHeader />
       <ZoomSignin help={isHelp} helpHandle={helpHandle} />
       <ZoomSsoList />
-      <button onMouseEnter={HandleHover} onMouseLeave={HandleHover}>
+      <button onMouseEnter={handleHover} onMouseLeave={handleHover}>
         {isHelp && (
           <img
             className="b-2"
