@@ -5,7 +5,22 @@ import passwordShow from "../assets/eye-password-show-svgrepo-com.svg";
 import info from "../assets/circle-information-svgrepo-com.svg";
 import { useState } from "react";
 
-function ZoomSignin({ help, helpHandle }) {
+//TODO: password show hide logic
+//TODO: signin loading spinning
+//TODO: input validation
+//TODO: show errormsg
+//TODO: stay signed in i hover popup
+//TODO: help hover popup chat
+//TODO: simple auto chat
+
+//CSS
+//TODO: positioning
+//TODO: styling
+//TODO: responsive - layoutchange
+
+function ZoomSignin({ helpHandle }) {
+  const [isVisible, setIsVisible] = useState(false);
+
   const onInputChange = () => {
     console.log("input");
   };
@@ -20,6 +35,10 @@ function ZoomSignin({ help, helpHandle }) {
 
   const helpClickHandle = () => {
     helpHandle();
+  };
+
+  const passwordVisibleClick = () => {
+    setIsVisible(!isVisible);
   };
 
   return (
@@ -53,9 +72,15 @@ function ZoomSignin({ help, helpHandle }) {
                 onChange={onInputChange}
                 placeholder="Password"
               />
+
               <div>
-                <img src={passwordHide} />
-                <img src={passwordShow} />
+                <button onClick={passwordVisibleClick}>
+                  {!isVisible ? (
+                    <img src={passwordShow} alt="show" />
+                  ) : (
+                    <img src={passwordHide} alt="hide" />
+                  )}
+                </button>
                 // inside password show hide btn
               </div>
             </div>
