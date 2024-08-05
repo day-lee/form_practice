@@ -13,6 +13,8 @@ module.exports = {
         zoomgrey: "#f7f9fa",
         zoombtnblue: "#0e72ed",
         zoomdarkblue: "#0956b5",
+        zoomred: "#b22424",
+        zoomlightred: "#fff2f5",
       },
     },
   },
