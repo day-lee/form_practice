@@ -1,7 +1,7 @@
-import ssologo from "../assets/sso-logo.png";
-import applelogo from "../assets/apple-sm-logo.png";
-import googlelogo from "../assets/google-sm-logo.png";
-import facebooklogo from "../assets/facebook-logo.png";
+import ssologo from "../assets/sso-logo.svg";
+import applelogo from "../assets/apple-logo.svg";
+import googlelogo from "../assets/google-logo.svg";
+import facebooklogo from "../assets/facebook-logo.svg";
 
 function ZoomSsoList() {
   const linkHandle = (e) => {
@@ -37,36 +37,61 @@ function ZoomSsoList() {
 
   return (
     <>
-      <div>
-        <p> -- Or sign in with --</p>
-        <div className="b-2">
-          <button className="b-2" id="sso" name="sso" onClick={linkHandle}>
+      <div className="text-zoomagreegrey text-sm font-normal mt-[16px]">
+        <p className="mt-[12px] mb-[24px] font-semibold">
+          {" "}
+          -- Or sign in with --
+        </p>
+        <div className="">
+          <button
+            className="border m-2 p-3 w-[48px] h-[48px] rounded-2xl hover:bg-[#F0F0F0]"
+            id="sso"
+            name="sso"
+            onClick={linkHandle}
+          >
             <img src={ssologo} alt="ssologo" />
-            <p>SSO</p>
+            <p className="pt-2">SSO</p>
           </button>
         </div>
         <div className="">
-          <button className="" name="apple" onClick={linkHandle}>
+          <button
+            className="border m-2 pl-3 w-[48px] h-[48px] rounded-2xl hover:bg-[#F0F0F0]"
+            id="apple"
+            name="apple"
+            onClick={linkHandle}
+          >
             <img src={applelogo} alt="applelogo" />
-            <p>Apple</p>
           </button>
+          <p className="pt-2">Apple</p>
         </div>
         <div className="">
-          <button className="" name="google" onClick={linkHandle}>
+          <button
+            className="border m-2 p-3 w-[48px] h-[48px] rounded-2xl hover:bg-[#F0F0F0]"
+            id="google"
+            name="google"
+            onClick={linkHandle}
+          >
             <img src={googlelogo} alt="googlelogo" />
-            <p>Google</p>
           </button>
-        </div>
-        <div className="">
-          <button className="" name="facebook" onClick={linkHandle}>
-            <img src={facebooklogo} alt="facebooklogo" />
-            <p>Facebook</p>
-          </button>
+          <p className="pt-2">Google</p>
         </div>
 
-        <div>
-          Zoom is protected by reCAPTCHA and the <span>Privacy Policy</span> and
-          <span>Terms of Service</span> apply.
+        <div className="">
+          <button
+            className="border m-2 p-3 w-[48px] h-[48px] rounded-2xl hover:bg-[#F0F0F0]"
+            id="facebook"
+            name="facebook"
+            onClick={linkHandle}
+          >
+            <img src={facebooklogo} alt="facebooklogo" />
+          </button>
+          <p className="pt-2">Facebook</p>
+        </div>
+
+        <div className="mt-[32px] text-zoombordergrey font-semibold">
+          Zoom is protected by reCAPTCHA and the{" "}
+          <span className="text-zoomdarkblue">Privacy Policy</span> and
+          <span className="text-zoomdarkblue"> Terms of Service</span> apply.
         </div>
       </div>
     </>

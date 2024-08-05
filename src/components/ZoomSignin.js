@@ -5,25 +5,25 @@ import passwordShow from "../assets/eye-password-show-svgrepo-com.svg";
 import info from "../assets/circle-information-svgrepo-com.svg";
 import { useState } from "react";
 
-//TODO: show errormsg
-//TODO: input validation
-//bug -> sign in, hide, help button considered same button (+ linkedin submit with enter key)
-
 //TODO: stay signed in i hover popup
 //TODO: help hover popup chat
 //TODO: simple auto chat
 //TODO: signin loading spinning
 
 //CSS
+//TODO: input focus email/password text size smaller
 //TODO: positioning
-//TODO: styling
+//TODO: styling - help hover underline, errorMsg margin, signin btn (default, isLoading, error), sso btn
 //TODO: responsive - layoutchange
+
+//TODO -> Linkedin submit enter
 
 const INNITIAL_VALUES = { zoomemail: "", zoompassword: "" };
 
 function ZoomSignin({ helpHandle }) {
   const [formValues, setFormValues] = useState(INNITIAL_VALUES);
   const [isVisible, setIsVisible] = useState(false);
+  const [error, setError] = useState(false);
   const [errorEmail, setErrorEmail] = useState("");
   const [errorPassword, setErrorPassword] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
@@ -57,16 +57,20 @@ function ZoomSignin({ helpHandle }) {
     if (buttonName === "zoomSignin") {
       // Validate the formValues to show error msg or comple the login
       if (zoomemail === "" && zoompassword === "") {
+        setError(true);
         setErrorEmail("Please enter your email address");
         setErrorPassword("Please enter your password");
       } else if (!validateEmail(zoomemail)) {
+        setError(true);
         setErrorEmail("Please enter a valid email address.");
       } else if (zoompassword !== "1234") {
+        setError(true);
         setErrorMsg(
           "Incorrect email or password. Enter your sign ininformation again, or request an email to gain access to your account."
         );
       } else {
         alert(`You have successfully logged in as ${zoomemail} `);
+        setFormValues(INNITIAL_VALUES);
       }
     } else if (buttonName === "zoomHelp") {
       helpHandle();
@@ -98,12 +102,16 @@ function ZoomSignin({ helpHandle }) {
         </div>
 
         <div>
-          <p>Sign In</p>
-          <form onSubmit={submitHandle} id="zoomForm">
+          <p className="text-[32px] mb-[32px] font-semibold">Sign In</p>
+          <form className="w-[346px]" onSubmit={submitHandle} id="zoomForm">
             <div>
               <label htmlFor="email"></label>
               <input
-                className="border-2"
+                className={`w-full rounded p-2 mb-4 ${
+                  !error
+                    ? "border border-zoombordergrey"
+                    : "mb-0 border  border-red-500"
+                }`}
                 type="text"
                 id="zoomemail"
                 name="zoomemail"
@@ -113,13 +121,18 @@ function ZoomSignin({ helpHandle }) {
                 placeholder="Email Address"
               />
 
-              <div className="p-2 text-zoomred">{errorEmail}</div>
+              <div className="text-zoomred text-sm">{errorEmail}</div>
 
               <label htmlFor="password"></label>
               <input
-                className="border-2"
+                className={`w-full rounded p-2 ${
+                  !error
+                    ? "border border-zoombordergrey"
+                    : "border  border-red-500"
+                }`}
                 type={isVisible ? "text" : "password"}
                 id="zoompassword"
+                s
                 name="zoompassword"
                 value={zoompassword}
                 onChange={onInputChange}
@@ -142,42 +155,48 @@ function ZoomSignin({ helpHandle }) {
                 // inside password
               </div>
 
-              <div className="p-2 text-zoomred">{errorPassword}</div>
+              <div className="text-zoomred text-sm">{errorPassword}</div>
             </div>
 
             <div>
               <button
+                className="text-zoomdarkblue font-semibold text-sm p-2 hover:text-zoomhoverblue "
                 id="forgotPassword"
                 name="forgotPassword"
-                className="p-2"
                 onClick={forgotHandle}
               >
                 Forgot password?
               </button>
-              <button name="zoomHelp">Help</button>
+              <button
+                className="text-zoomdarkblue font-semibold text-sm p-2 hover:text-zoomhoverblue underline-offset-auto hover:underline-offset-8"
+                name="zoomHelp"
+              >
+                Help
+              </button>
               <img className="w-4 h-4" src={openwindow} alt="open-window" />
             </div>
-
-            <div className="bg-zoomlightred p-2">{errorMsg}</div>
-
+            <div className="bg-zoomlightred p-[16px] mb-[16px] rounded text-sm">
+              {errorMsg}
+            </div>
             <button
               id="zoomSignIn"
               name="zoomSignin"
-              className="bg-zoombtnblue text-white font-semibold border p-2"
+              className="w-full bg-zoombtnblue text-white rounded-lg font-semibold border p-2  h-[40px]"
               type="submit"
             >
               Sign In
             </button>
-
             <div>
-              <p>
+              <p className="text-zoomagreegrey text-sm font-normal mt-[16px] mb-[10px]">
                 By signing in, I agree to the
-                <span>Zoom's Privacy Statement</span>
-                and <span>Terms of Service.</span>
+                <span className="text-zoomdarkblue">
+                  &nbsp;Zoom's Privacy Statement
+                </span>
+                and <span className="text-zoomdarkblue">Terms of Service.</span>
               </p>
-              <p>
+              <p className="text-zoombordergrey text-sm mt-[8px] font-semibold">
                 <input type="checkbox" /> Stay signed in{" "}
-                <img className="w-5 h-5" src={info} />
+                <img className="w-4 h-4" src={info} />
               </p>
             </div>
           </form>

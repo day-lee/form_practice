@@ -104,7 +104,7 @@ function App() {
       </div>
 
       <div className="flex justify-center items-center flex-grow mt-[5px]">
-        <div className="bg-white pt-15 px-16 py-5 justify-center w-full h-[700px]">
+        <div className="bg-white pt-15 px-16 py-5 justify-center w-full h-[1700px]">
           <div className="w-[352px] h-[536px]">
             {" "}
             <ZoomPage />
