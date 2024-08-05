@@ -37,61 +37,78 @@ function ZoomSsoList() {
 
   return (
     <>
-      <div className="text-zoomagreegrey text-sm font-normal mt-[16px]">
-        <p className="mt-[12px] mb-[24px] font-semibold">
-          {" "}
-          -- Or sign in with --
-        </p>
-        <div className="">
-          <button
-            className="border m-2 p-3 w-[48px] h-[48px] rounded-2xl hover:bg-[#F0F0F0]"
-            id="sso"
-            name="sso"
-            onClick={linkHandle}
-          >
-            <img src={ssologo} alt="ssologo" />
-            <p className="pt-2">SSO</p>
-          </button>
+      <div className="text-zoomagreegrey text-sm  mt-[16px]">
+        <div className="flex justify-center mt-[12px] font-light mb-[24px] font-medium">
+          <span className="block border-b w-1/3 my-auto"></span>
+          <span>&nbsp; Or sign in with &nbsp;</span>
+          <span className="block border-b w-1/3 my-auto"></span>
         </div>
-        <div className="">
-          <button
-            className="border m-2 pl-3 w-[48px] h-[48px] rounded-2xl hover:bg-[#F0F0F0]"
-            id="apple"
-            name="apple"
-            onClick={linkHandle}
-          >
-            <img src={applelogo} alt="applelogo" />
-          </button>
-          <p className="pt-2">Apple</p>
-        </div>
-        <div className="">
-          <button
-            className="border m-2 p-3 w-[48px] h-[48px] rounded-2xl hover:bg-[#F0F0F0]"
-            id="google"
-            name="google"
-            onClick={linkHandle}
-          >
-            <img src={googlelogo} alt="googlelogo" />
-          </button>
-          <p className="pt-2">Google</p>
-        </div>
+        <div className="flex justify-evenly">
+          <div className="w-[85px] h-[86px] flex justify-center hover:text-black">
+            <button
+              className="border m-2 p-3 w-[48px] h-[48px] rounded-2xl hover:bg-[#F0F0F0]"
+              id="sso"
+              name="sso"
+              onClick={linkHandle}
+            >
+              <img src={ssologo} alt="ssologo" />
+              <p className="pt-4">SSO</p>
+            </button>
+          </div>
+          <div className="w-[85px] h-[86px] flex justify-center hover:text-black">
+            <button
+              className="border m-2 pl-3 pt-3 pb-3 w-[48px] h-[48px] rounded-2xl hover:bg-[#F0F0F0]"
+              id="apple"
+              name="apple"
+              onClick={linkHandle}
+            >
+              <img src={applelogo} alt="applelogo" />
+              <p className=" mt-4">Apple</p>
+            </button>
+          </div>
+          <div className="w-[85px] h-[86px] flex justify-center hover:text-black">
+            <button
+              className="border m-2 p-3 w-[48px] h-[48px] rounded-2xl hover:bg-[#F0F0F0]"
+              id="google"
+              name="google"
+              onClick={linkHandle}
+            >
+              <img src={googlelogo} alt="googlelogo" />
+              <p className="mt-4">Google</p>
+            </button>
+          </div>
 
-        <div className="">
-          <button
-            className="border m-2 p-3 w-[48px] h-[48px] rounded-2xl hover:bg-[#F0F0F0]"
-            id="facebook"
-            name="facebook"
-            onClick={linkHandle}
-          >
-            <img src={facebooklogo} alt="facebooklogo" />
-          </button>
-          <p className="pt-2">Facebook</p>
+          <div className="w-[85px] h-[86px] flex justify-center hover:text-black">
+            <button
+              className="border m-2 p-3 w-[48px] h-[48px] rounded-2xl hover:bg-[#F0F0F0]"
+              id="facebook"
+              name="facebook"
+              onClick={linkHandle}
+            >
+              <img src={facebooklogo} alt="facebooklogo" />
+              <p className="pt-4">Facebook</p>
+            </button>
+          </div>
         </div>
-
-        <div className="mt-[32px] text-zoombordergrey font-semibold">
+        <div className="mt-[32px] text-zoombordergrey font-normal">
           Zoom is protected by reCAPTCHA and the{" "}
-          <span className="text-zoomdarkblue">Privacy Policy</span> and
-          <span className="text-zoomdarkblue"> Terms of Service</span> apply.
+          <a
+            href="https://policies.google.com/privacy"
+            target="_blank"
+            className="text-zoomdarkblue"
+          >
+            Privacy Policy
+          </a>{" "}
+          and
+          <a
+            href="https://policies.google.com/terms"
+            target="_blank"
+            className="text-zoomdarkblue"
+          >
+            {" "}
+            Terms of Service
+          </a>{" "}
+          apply.
         </div>
       </div>
     </>

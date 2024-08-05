@@ -26,6 +26,7 @@ function ZoomSignin({ helpHandle }) {
   const [error, setError] = useState(false);
   const [errorEmail, setErrorEmail] = useState("");
   const [errorPassword, setErrorPassword] = useState("");
+  const [isBothError, setIsBothError] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
   const { zoomemail, zoompassword } = formValues;
 
@@ -38,6 +39,8 @@ function ZoomSignin({ helpHandle }) {
     setErrorEmail("");
     setErrorPassword("");
     setErrorMsg("");
+    setError(false);
+    setIsBothError(false);
     const { name, value } = e.target;
     // Change the formValues as entered
     setFormValues((prev) => ({ ...prev, [name]: value }));
@@ -64,7 +67,7 @@ function ZoomSignin({ helpHandle }) {
         setError(true);
         setErrorEmail("Please enter a valid email address.");
       } else if (zoompassword !== "1234") {
-        setError(true);
+        setIsBothError(true);
         setErrorMsg(
           "Incorrect email or password. Enter your sign ininformation again, or request an email to gain access to your account."
         );
@@ -101,13 +104,18 @@ function ZoomSignin({ helpHandle }) {
           <img src={zoomImg} alt="zoomimg" />
         </div>
 
-        <div>
-          <p className="text-[32px] mb-[32px] font-semibold">Sign In</p>
+        <div className="flex-col">
+          <p
+            className="flex justify-center
+           text-[32px] mb-[32px] font-semibold"
+          >
+            Sign In
+          </p>
           <form className="w-[346px]" onSubmit={submitHandle} id="zoomForm">
             <div>
               <label htmlFor="email"></label>
               <input
-                className={`w-full rounded p-2 mb-4 ${
+                className={`w-full rounded-lg p-2 mb-4 ${
                   !error
                     ? "border border-zoombordergrey"
                     : "mb-0 border  border-red-500"
@@ -125,7 +133,7 @@ function ZoomSignin({ helpHandle }) {
 
               <label htmlFor="password"></label>
               <input
-                className={`w-full rounded p-2 ${
+                className={`w-full rounded-lg p-2 ${
                   !error
                     ? "border border-zoombordergrey"
                     : "border  border-red-500"
@@ -158,9 +166,9 @@ function ZoomSignin({ helpHandle }) {
               <div className="text-zoomred text-sm">{errorPassword}</div>
             </div>
 
-            <div>
+            <div className="flex justify-between">
               <button
-                className="text-zoomdarkblue font-semibold text-sm p-2 hover:text-zoomhoverblue "
+                className="flex text-zoomdarkblue font-semibold text-sm p-2 hover:text-zoomhoverblue "
                 id="forgotPassword"
                 name="forgotPassword"
                 onClick={forgotHandle}
@@ -168,20 +176,29 @@ function ZoomSignin({ helpHandle }) {
                 Forgot password?
               </button>
               <button
-                className="text-zoomdarkblue font-semibold text-sm p-2 hover:text-zoomhoverblue underline-offset-auto hover:underline-offset-8"
+                className="flex text-zoomdarkblue font-semibold text-sm p-2 hover:text-zoomhoverblue underline-offset-auto hover:underline-offset-8"
                 name="zoomHelp"
               >
-                Help
+                Help &nbsp;
+                <img
+                  className="w-4 h-4 flex items-cneter"
+                  src={openwindow}
+                  alt="open-window"
+                />
               </button>
-              <img className="w-4 h-4" src={openwindow} alt="open-window" />
             </div>
-            <div className="bg-zoomlightred p-[16px] mb-[16px] rounded text-sm">
+
+            <div
+              className={`bg-zoomlightred p-[16px] my-[16px] rounded text-sm ${
+                !isBothError && "hidden"
+              }`}
+            >
               {errorMsg}
             </div>
             <button
               id="zoomSignIn"
               name="zoomSignin"
-              className="w-full bg-zoombtnblue text-white rounded-lg font-semibold border p-2  h-[40px]"
+              className="w-full bg-zoombtnblue text-white rounded-lg font-bold border p-2  h-[40px]"
               type="submit"
             >
               Sign In
@@ -190,14 +207,25 @@ function ZoomSignin({ helpHandle }) {
               <p className="text-zoomagreegrey text-sm font-normal mt-[16px] mb-[10px]">
                 By signing in, I agree to the
                 <span className="text-zoomdarkblue">
-                  &nbsp;Zoom's Privacy Statement
+                  <a href="https://explore.zoom.us/en/privacy/" target="_blank">
+                    &nbsp;Zoom's Privacy Statement
+                  </a>
                 </span>
-                and <span className="text-zoomdarkblue">Terms of Service.</span>
+                &nbsp; and &nbsp;
+                <a
+                  className="text-zoomdarkblue"
+                  href="https://www.zoom.com/en/trust/terms/"
+                  target="_blank"
+                >
+                  Terms of Service.
+                </a>
               </p>
-              <p className="text-zoombordergrey text-sm mt-[8px] font-semibold">
-                <input type="checkbox" /> Stay signed in{" "}
-                <img className="w-4 h-4" src={info} />
-              </p>
+              <div className="flex items-center">
+                <p className="text-zoombordergrey text-sm mt-[8px] font-medium">
+                  <input type="checkbox" /> Stay signed in &nbsp;
+                </p>
+                <img className="w-4 h-4 mt-2" src={info} />
+              </div>
             </div>
           </form>
         </div>
