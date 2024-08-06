@@ -115,7 +115,7 @@ function ZoomSignin({ helpHandle }) {
           </p>
           <form className="w-[346px]" onSubmit={submitHandle} id="zoomForm">
             <div>
-              <div className="relative mb-2">
+              <div className="relative">
                 {isEmailFocused && (
                   <label
                     className="absolute text-slate-500 pt-1 pb-2 left-0 top-0 text-xs mb-1 px-2"
@@ -145,7 +145,7 @@ function ZoomSignin({ helpHandle }) {
                 <div className="text-zoomred text-sm ">{errorEmail}</div>
               </div>
 
-              <div className="relative mb-2">
+              <div className="relative flex">
                 {isPasswordFocused && (
                   <label
                     className="absolute text-slate-500 pt-1 pb-2 left-0 top-0 text-xs mb-1 px-2"
@@ -172,29 +172,27 @@ function ZoomSignin({ helpHandle }) {
                   onFocus={() => setIsPasswordFocused(true)}
                   onBlur={() => setIsPasswordFocused(false)}
                 />
-              </div>
 
-              <div>
-                <button
-                  id="zoomPasswordVisibility"
-                  name="zoomPasswordVisibility"
-                  className="w-4 h-4"
-                >
-                  {!isVisible ? (
-                    <img src={passwordShow} alt="show" />
-                  ) : (
-                    <img src={passwordHide} alt="hide" />
-                  )}
-                </button>
-                // inside password
+                <div className="absolute flex items-center top-4 right-3  ">
+                  <button
+                    id="zoomPasswordVisibility"
+                    name="zoomPasswordVisibility"
+                    className="w-4 h-4"
+                  >
+                    {!isVisible ? (
+                      <img src={passwordShow} alt="show" />
+                    ) : (
+                      <img src={passwordHide} alt="hide" />
+                    )}
+                  </button>
+                </div>
               </div>
-
               <div className="text-zoomred text-sm">{errorPassword}</div>
             </div>
 
-            <div className="flex justify-between">
+            <div className="flex justify-between mb-3">
               <button
-                className="flex text-zoomdarkblue font-semibold text-sm p-2 hover:underline underline-offset-2 hover:text-zoomhoverblue "
+                className="flex text-zoomdarkblue font-semibold text-sm py-2 hover:underline underline-offset-2 hover:text-zoomhoverblue "
                 id="forgotPassword"
                 name="forgotPassword"
                 onClick={forgotHandle}
@@ -202,7 +200,7 @@ function ZoomSignin({ helpHandle }) {
                 Forgot password?
               </button>
               <button
-                className="flex text-zoomdarkblue font-semibold text-sm p-2 hover:text-zoomhoverblue 
+                className="flex text-zoomdarkblue font-semibold text-sm py-2 hover:text-zoomhoverblue 
                 underline-offset-auto hover:underline underline-offset-2"
                 name="zoomHelp"
               >
