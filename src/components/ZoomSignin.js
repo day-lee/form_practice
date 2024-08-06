@@ -11,9 +11,8 @@ import { useState } from "react";
 //TODO: signin loading spinning
 
 //CSS
-//TODO: input focus email/password text size smaller
 //TODO: positioning
-//TODO: styling - help hover underline, errorMsg margin, signin btn (default, isLoading, error), sso btn
+//TODO: styling - signin btn (default, isLoading, error), sso btn
 //TODO: responsive - layoutchange
 
 //TODO -> Linkedin submit enter
@@ -115,7 +114,7 @@ function ZoomSignin({ helpHandle }) {
           </p>
           <form className="w-[346px]" onSubmit={submitHandle} id="zoomForm">
             <div>
-              <div className="relative">
+              <div className="relative mb-2">
                 {isEmailFocused && (
                   <label
                     className="absolute text-slate-500 pt-1 pb-2 left-0 top-0 text-xs mb-1 px-2"
