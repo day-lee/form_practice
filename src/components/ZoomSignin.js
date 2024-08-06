@@ -194,7 +194,7 @@ function ZoomSignin({ helpHandle }) {
 
             <div className="flex justify-between">
               <button
-                className="flex text-zoomdarkblue font-semibold text-sm p-2 hover:text-zoomhoverblue "
+                className="flex text-zoomdarkblue font-semibold text-sm p-2 hover:underline underline-offset-2 hover:text-zoomhoverblue "
                 id="forgotPassword"
                 name="forgotPassword"
                 onClick={forgotHandle}
@@ -202,12 +202,13 @@ function ZoomSignin({ helpHandle }) {
                 Forgot password?
               </button>
               <button
-                className="flex text-zoomdarkblue font-semibold text-sm p-2 hover:text-zoomhoverblue underline-offset-auto hover:underline-offset-8"
+                className="flex text-zoomdarkblue font-semibold text-sm p-2 hover:text-zoomhoverblue 
+                underline-offset-auto hover:underline underline-offset-2"
                 name="zoomHelp"
               >
-                Help &nbsp;
+                Help
                 <img
-                  className="w-4 h-4 flex items-cneter"
+                  className="w-4 h-4 ml-2 flex items-cneter"
                   src={openwindow}
                   alt="open-window"
                 />
@@ -232,14 +233,14 @@ function ZoomSignin({ helpHandle }) {
             <div>
               <p className="text-zoomagreegrey text-sm font-normal mt-[16px] mb-[10px]">
                 By signing in, I agree to the
-                <span className="text-zoomdarkblue">
+                <span className="text-zoomdarkblue hover:underline underline-offset-2">
                   <a href="https://explore.zoom.us/en/privacy/" target="_blank">
                     &nbsp;Zoom's Privacy Statement
                   </a>
                 </span>
                 &nbsp; and &nbsp;
                 <a
-                  className="text-zoomdarkblue"
+                  className="text-zoomdarkblue hover:underline underline-offset-2"
                   href="https://www.zoom.com/en/trust/terms/"
                   target="_blank"
                 >

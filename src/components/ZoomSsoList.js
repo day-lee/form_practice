@@ -95,19 +95,18 @@ function ZoomSsoList() {
           <a
             href="https://policies.google.com/privacy"
             target="_blank"
-            className="text-zoomdarkblue"
+            className="text-zoomdarkblue hover:underline underline-offset-2"
           >
-            Privacy Policy
-          </a>{" "}
-          and
+            Privacy Policy{" "}
+          </a>
+          and{" "}
           <a
             href="https://policies.google.com/terms"
             target="_blank"
-            className="text-zoomdarkblue"
+            className="text-zoomdarkblue hover:underline underline-offset-2"
           >
-            {" "}
-            Terms of Service
-          </a>{" "}
+            Terms of Service{" "}
+          </a>
           apply.
         </div>
       </div>
