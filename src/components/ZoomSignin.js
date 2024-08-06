@@ -28,6 +28,8 @@ function ZoomSignin({ helpHandle }) {
   const [errorPassword, setErrorPassword] = useState("");
   const [isBothError, setIsBothError] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
+  const [isEmailFocused, setIsEmailFocused] = useState(false);
+  const [isPasswordFocused, setIsPasswordFocused] = useState(false);
   const { zoomemail, zoompassword } = formValues;
 
   const validateEmail = (email) => {
@@ -113,40 +115,64 @@ function ZoomSignin({ helpHandle }) {
           </p>
           <form className="w-[346px]" onSubmit={submitHandle} id="zoomForm">
             <div>
-              <label htmlFor="email"></label>
-              <input
-                className={`w-full rounded-lg p-2 mb-4 ${
-                  !error
-                    ? "border border-zoombordergrey"
-                    : "mb-0 border  border-red-500"
-                }`}
-                type="text"
-                id="zoomemail"
-                name="zoomemail"
-                value={zoomemail}
-                onChange={onInputChange}
-                onKeyPress={handleKeyPress}
-                placeholder="Email Address"
-              />
+              <div className="relative mb-2">
+                {isEmailFocused && (
+                  <label
+                    className="absolute text-slate-500 pt-1 pb-2 left-0 top-0 text-xs mb-1 px-2"
+                    htmlFor="email"
+                  >
+                    Email Address
+                  </label>
+                )}
 
-              <div className="text-zoomred text-sm">{errorEmail}</div>
+                <input
+                  className={`w-full h-12 rounded-lg px-2 mb-4 placeholer:pt-0 placeholder:text-slate-500 
+                    focus:placeholder-transparent focus:pt-4 ${
+                      !error
+                        ? "border border-zoombordergrey"
+                        : "mb-0 border  border-red-500"
+                    }`}
+                  type="text"
+                  id="zoomemail"
+                  name="zoomemail"
+                  value={zoomemail}
+                  onChange={onInputChange}
+                  onKeyPress={handleKeyPress}
+                  placeholder="Email Address"
+                  onFocus={() => setIsEmailFocused(true)}
+                  onBlur={() => setIsEmailFocused(false)}
+                />
+                <div className="text-zoomred text-sm ">{errorEmail}</div>
+              </div>
 
-              <label htmlFor="password"></label>
-              <input
-                className={`w-full rounded-lg p-2 ${
-                  !error
-                    ? "border border-zoombordergrey"
-                    : "border  border-red-500"
-                }`}
-                type={isVisible ? "text" : "password"}
-                id="zoompassword"
-                s
-                name="zoompassword"
-                value={zoompassword}
-                onChange={onInputChange}
-                onKeyPress={handleKeyPress}
-                placeholder="Password"
-              />
+              <div className="relative mb-2">
+                {isPasswordFocused && (
+                  <label
+                    className="absolute text-slate-500 pt-1 pb-2 left-0 top-0 text-xs mb-1 px-2"
+                    htmlFor="email"
+                  >
+                    Password
+                  </label>
+                )}
+                <input
+                  className={`w-full h-12 rounded-lg px-2 mb-4 placeholer:pt-0 placeholder:text-slate-500 
+                    focus:placeholder-transparent focus:pt-4 ${
+                      !error
+                        ? "border border-zoombordergrey"
+                        : "mb-0 border  border-red-500"
+                    }`}
+                  type={isVisible ? "text" : "password"}
+                  id="zoompassword"
+                  s
+                  name="zoompassword"
+                  value={zoompassword}
+                  onChange={onInputChange}
+                  onKeyPress={handleKeyPress}
+                  placeholder="Password"
+                  onFocus={() => setIsPasswordFocused(true)}
+                  onBlur={() => setIsPasswordFocused(false)}
+                />
+              </div>
 
               <div>
                 <button
