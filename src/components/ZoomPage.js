@@ -6,7 +6,6 @@
 
 //  C3. SsoList
 
-import ZoomHeader from "./ZoomHeader";
 import ZoomSignin from "./ZoomSignin";
 import ZoomSsoList from "./ZoomSsoList";
 import zoomhelpbf from "../assets/zoom-help-1.png";
@@ -27,10 +26,13 @@ function ZoomPage() {
 
   return (
     <>
-      <ZoomHeader />
       <ZoomSignin help={isHelp} helpHandle={helpHandle} />
       <ZoomSsoList />
-      <button onMouseEnter={handleHover} onMouseLeave={handleHover}>
+      <button
+        className="absolute bottom-10 right-5"
+        onMouseEnter={handleHover}
+        onMouseLeave={handleHover}
+      >
         {isHelp && (
           <img
             className="b-2"

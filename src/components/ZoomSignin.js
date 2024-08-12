@@ -5,15 +5,17 @@ import passwordShow from "../assets/eye-password-show-svgrepo-com.svg";
 import info from "../assets/circle-information-svgrepo-com.svg";
 import { useState } from "react";
 
-//TODO: stay signed in i hover popup
-//TODO: help hover popup chat
-//TODO: simple auto chat
 //TODO: signin loading spinning
 
 //CSS
-//TODO: positioning
+
 //TODO: styling - signin btn (default, isLoading, error), sso btn
+//TODO: positioning
 //TODO: responsive - layoutchange
+
+//TODO: stay signed in i hover popup
+//TODO: help hover popup chat
+//TODO: simple auto chat
 
 //TODO -> Linkedin submit enter
 
@@ -228,7 +230,7 @@ function ZoomSignin({ helpHandle }) {
               Sign In
             </button>
             <div>
-              <p className="text-zoomagreegrey text-sm font-normal mt-[16px] mb-[10px]">
+              <p className="text-zoomagreegrey text-sm font-semibold mt-[16px] mb-[10px]">
                 By signing in, I agree to the
                 <span className="text-zoomdarkblue hover:underline underline-offset-2">
                   <a href="https://explore.zoom.us/en/privacy/" target="_blank">
