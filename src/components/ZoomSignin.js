@@ -1,4 +1,3 @@
-import zoomImg from "../assets/zoom-img.png";
 import openwindow from "../assets/window-open.png";
 import passwordHide from "../assets/eye-password-hide-svgrepo-com.svg";
 import passwordShow from "../assets/eye-password-show-svgrepo-com.svg";
@@ -6,7 +5,6 @@ import info from "../assets/circle-information-svgrepo-com.svg";
 import { useState } from "react";
 
 //TODO: signin loading spinning
-// sso positioning
 
 //CSS
 
@@ -33,6 +31,7 @@ function ZoomSignin({ helpHandle }) {
   const [errorMsg, setErrorMsg] = useState("");
   const [isEmailFocused, setIsEmailFocused] = useState(false);
   const [isPasswordFocused, setIsPasswordFocused] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const { zoomemail, zoompassword } = formValues;
 
   const validateEmail = (email) => {
@@ -61,6 +60,7 @@ function ZoomSignin({ helpHandle }) {
 
   const submitHandle = (e) => {
     e.preventDefault();
+
     const buttonName = e.nativeEvent.submitter.name;
     if (buttonName === "zoomSignin") {
       // Validate the formValues to show error msg or comple the login
@@ -77,8 +77,13 @@ function ZoomSignin({ helpHandle }) {
           "Incorrect email or password. Enter your sign ininformation again, or request an email to gain access to your account."
         );
       } else {
-        alert(`You have successfully logged in as ${zoomemail} `);
-        setFormValues(INNITIAL_VALUES);
+        setIsLoading(true);
+        const timer = setTimeout(() => {
+          alert(`You have successfully logged in as ${zoomemail} `);
+          setFormValues(INNITIAL_VALUES);
+          setIsLoading(false);
+        }, 2000);
+        return () => clearTimeout(timer);
       }
     } else if (buttonName === "zoomHelp") {
       helpHandle();
@@ -105,10 +110,6 @@ function ZoomSignin({ helpHandle }) {
   return (
     <>
       <div>
-        <div>
-          <img src={zoomImg} alt="zoomimg" />
-        </div>
-
         <div className="flex-col">
           <p
             className="flex justify-center
@@ -192,7 +193,6 @@ function ZoomSignin({ helpHandle }) {
               </div>
               <div className="text-zoomred text-sm">{errorPassword}</div>
             </div>
-
             <div className="flex justify-between mb-3">
               <button
                 className="flex text-zoomdarkblue font-semibold text-sm py-2 hover:underline underline-offset-2 hover:text-zoomhoverblue "
@@ -215,7 +215,6 @@ function ZoomSignin({ helpHandle }) {
                 />
               </button>
             </div>
-
             <div
               className={`bg-zoomlightred p-[16px] my-[16px] rounded text-sm ${
                 !isBothError && "hidden"
@@ -223,10 +222,26 @@ function ZoomSignin({ helpHandle }) {
             >
               {errorMsg}
             </div>
+            <div
+              class="tenor-gif-embed"
+              data-postid="5053439190246779551"
+              data-share-method="host"
+              data-aspect-ratio="1"
+              data-width="100%"
+            ></div>{" "}
+            <script
+              type="text/javascript"
+              async
+              src="https://tenor.com/embed.js"
+            ></script>
             <button
               id="zoomSignIn"
               name="zoomSignin"
-              className="w-full bg-zoombtnblue text-white rounded-lg font-bold border p-2  h-[40px]"
+              className={`w-full ${
+                isLoading
+                  ? "bg-zoomsigningrey text-zoomsignindarkgrey"
+                  : "bg-zoombtnblue text-white border p-2"
+              }  rounded-lg font-bold  h-[40px]`}
               type="submit"
             >
               Sign In

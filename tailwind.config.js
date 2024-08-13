@@ -18,6 +18,8 @@ module.exports = {
         zoomred: "#b22424",
         zoomlightred: "#fff2f5",
         zoombordergrey: "#6e7680",
+        zoomsigningrey: "#f1f4f6",
+        zoomsignindarkgrey: "#6e7680",
       },
     },
   },
