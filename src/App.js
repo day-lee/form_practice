@@ -106,7 +106,7 @@ function App() {
 
       <div className="justify-center items-center flex-grow mt-[5px]">
         <ZoomHeader />
-        <div className="flex relative bg-white pt-15 px-16 py-5 justify-center w-full h-[1100px]">
+        <div className="flex relative bg-white pt-15 px-16 py-5 justify-center w-full h-[1000px]">
           <div className="w-[352px] h-[536px]">
             {" "}
             <ZoomPage />

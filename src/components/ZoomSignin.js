@@ -6,9 +6,11 @@ import info from "../assets/circle-information-svgrepo-com.svg";
 import { useState } from "react";
 
 //TODO: signin loading spinning
+// sso positioning
 
 //CSS
 
+//TODO: select box design
 //TODO: styling - signin btn (default, isLoading, error), sso btn
 //TODO: positioning
 //TODO: responsive - layoutchange

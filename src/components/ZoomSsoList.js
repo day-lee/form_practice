@@ -37,14 +37,14 @@ function ZoomSsoList() {
 
   return (
     <>
-      <div className="text-zoomagreegrey text-sm  mt-[16px]">
-        <div className="flex justify-center mt-[12px] font-light mb-[24px] font-medium">
+      <div className="text-zoomagreegrey text-sm font-semibold mt-[16px]">
+        <div className="flex justify-center mt-[12px] mb-[24px]">
           <span className="block border-b w-1/3 my-auto"></span>
           <span>&nbsp; Or sign in with &nbsp;</span>
           <span className="block border-b w-1/3 my-auto"></span>
         </div>
         <div className="flex justify-evenly">
-          <div className="w-[85px] h-[86px] flex justify-center hover:text-black">
+          <div className="relative w-[85px] h-[86px] hover:text-black">
             <button
               className="border m-2 p-3 w-[48px] h-[48px] rounded-2xl hover:bg-[#F0F0F0]"
               id="sso"
@@ -52,10 +52,11 @@ function ZoomSsoList() {
               onClick={linkHandle}
             >
               <img src={ssologo} alt="ssologo" />
-              <p className="pt-4">SSO</p>
+              <p className="absolute left-5 mt-6">SSO</p>
             </button>
           </div>
-          <div className="w-[85px] h-[86px] flex justify-center hover:text-black">
+
+          <div className="relative w-[85px] h-[86px] hover:text-black">
             <button
               className="border m-2 pl-3 pt-3 pb-3 w-[48px] h-[48px] rounded-2xl hover:bg-[#F0F0F0]"
               id="apple"
@@ -63,10 +64,11 @@ function ZoomSsoList() {
               onClick={linkHandle}
             >
               <img src={applelogo} alt="applelogo" />
-              <p className=" mt-4">Apple</p>
+              <p className="absolute left-4 mt-5">Apple</p>
             </button>
           </div>
-          <div className="w-[85px] h-[86px] flex justify-center hover:text-black">
+
+          <div className="relative w-[85px] h-[86px] hover:text-black">
             <button
               className="border m-2 p-3 w-[48px] h-[48px] rounded-2xl hover:bg-[#F0F0F0]"
               id="google"
@@ -74,11 +76,11 @@ function ZoomSsoList() {
               onClick={linkHandle}
             >
               <img src={googlelogo} alt="googlelogo" />
-              <p className="mt-4">Google</p>
+              <p className="absolute left-2 mt-5">Google</p>
             </button>
           </div>
 
-          <div className="w-[85px] h-[86px] flex justify-center hover:text-black">
+          <div className="relative w-[85px] h-[86px] hover:text-black">
             <button
               className="border m-2 p-3 w-[48px] h-[48px] rounded-2xl hover:bg-[#F0F0F0]"
               id="facebook"
@@ -86,11 +88,11 @@ function ZoomSsoList() {
               onClick={linkHandle}
             >
               <img src={facebooklogo} alt="facebooklogo" />
-              <p className="pt-4">Facebook</p>
+              <p className="absolute left-1 pt-5">Facebook</p>
             </button>
           </div>
         </div>
-        <div className="mt-[32px] text-zoombordergrey font-normal">
+        <div className="mt-[32px] text-zoombordergrey ">
           Zoom is protected by reCAPTCHA and the{" "}
           <a
             href="https://policies.google.com/privacy"
