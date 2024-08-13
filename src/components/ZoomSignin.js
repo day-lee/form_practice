@@ -2,6 +2,7 @@ import openwindow from "../assets/window-open.png";
 import passwordHide from "../assets/eye-password-hide-svgrepo-com.svg";
 import passwordShow from "../assets/eye-password-show-svgrepo-com.svg";
 import info from "../assets/circle-information-svgrepo-com.svg";
+import Spinner from "./Spinner";
 import { useState } from "react";
 
 //TODO: signin loading spinning
@@ -48,7 +49,6 @@ function ZoomSignin({ helpHandle }) {
     const { name, value } = e.target;
     // Change the formValues as entered
     setFormValues((prev) => ({ ...prev, [name]: value }));
-    console.log(name, value);
   };
 
   const handleKeyPress = (e) => {
@@ -88,7 +88,6 @@ function ZoomSignin({ helpHandle }) {
     } else if (buttonName === "zoomHelp") {
       helpHandle();
     } else if (buttonName === "zoomPasswordVisibility") {
-      console.log("hi");
       setIsVisible(!isVisible);
     }
   };
@@ -222,30 +221,25 @@ function ZoomSignin({ helpHandle }) {
             >
               {errorMsg}
             </div>
-            <div
-              class="tenor-gif-embed"
-              data-postid="5053439190246779551"
-              data-share-method="host"
-              data-aspect-ratio="1"
-              data-width="100%"
-            ></div>{" "}
-            <script
-              type="text/javascript"
-              async
-              src="https://tenor.com/embed.js"
-            ></script>
-            <button
-              id="zoomSignIn"
-              name="zoomSignin"
-              className={`w-full ${
-                isLoading
-                  ? "bg-zoomsigningrey text-zoomsignindarkgrey"
-                  : "bg-zoombtnblue text-white border p-2"
-              }  rounded-lg font-bold  h-[40px]`}
-              type="submit"
-            >
-              Sign In
-            </button>
+            <div className="relative">
+              <button
+                id="zoomSignIn"
+                name="zoomSignin"
+                className={`w-full ${
+                  isLoading
+                    ? "bg-zoomsigningrey text-zoomsignindarkgrey"
+                    : "bg-zoombtnblue text-white border p-2"
+                }  rounded-lg font-bold  h-[40px]`}
+                type="submit"
+              >
+                {isLoading && (
+                  <div className="absolute left-5 top-4">
+                    <Spinner />
+                  </div>
+                )}
+                Sign In
+              </button>
+            </div>
             <div>
               <p className="text-zoomagreegrey text-sm font-semibold mt-[16px] mb-[10px]">
                 By signing in, I agree to the

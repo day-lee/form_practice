@@ -3,6 +3,15 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,tx,tsx}"],
   theme: {
     extend: {
+      animation: {
+        spin: "spin 1s linear infinite",
+      },
+      keyframes: {
+        spin: {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
+      },
       colors: {
         themeblue: "#0a66c2",
         themgray: "#00000099",

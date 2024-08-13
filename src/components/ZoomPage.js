@@ -1,10 +1,3 @@
-// C1. Header -> language select
-
-// C2. LoginForm
-//  -left: img
-//  - right: input & Btn
-
-//  C3. SsoList
 import zoomImg from "../assets/zoom-img.png";
 import ZoomSignin from "./ZoomSignin";
 import ZoomSsoList from "./ZoomSsoList";
@@ -30,7 +23,6 @@ function ZoomPage() {
         <div>
           <img src={zoomImg} alt="zoomimg" />
         </div>
-
         <ZoomSignin help={isHelp} helpHandle={helpHandle} />
         <ZoomSsoList />
       </div>
