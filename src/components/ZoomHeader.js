@@ -1,6 +1,6 @@
-import { hasSelectionSupport } from "@testing-library/user-event/dist/utils/index.js";
-import zoomLogo from "../assets/zoom-logo.png";
 import LanguageDropdown from "./LanguageDropdown.js";
+
+import zoomLogo from "../assets/zoom-logo.png";
 
 function Header() {
   const linkSignup = () => {

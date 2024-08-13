@@ -1,6 +1,7 @@
-import google from "../assets/google-logo.png";
-import apple from "../assets/apple-logo.png";
 import LoginInputBtn from "./LoginInputBtn.js";
+
+import apple from "../assets/apple-logo.png";
+import google from "../assets/google-logo.png";
 
 function LoginForm({
   email,
@@ -61,7 +62,6 @@ function LoginForm({
           onInputChangeHandle={onInputChange}
           onShowHandle={showHandle}
         />
-
         <div className="flex justify-center text-[14px] text-center text-themgray">
           <span className="block border-b border-gray w-1/2 mx-auto mb-2"></span>
           <span> &nbsp;&nbsp;or&nbsp;&nbsp; </span>
@@ -77,7 +77,6 @@ function LoginForm({
             <span className="text-themeblue font-semibold">Cookie Policy</span>.{" "}
           </span>
         </div>
-
         <button
           className="w-[352px] text-[16px] border border-solid 
       border-slate-400 rounded-3xl p-2 mb-2 hover:bg-hovergrey"
@@ -88,7 +87,6 @@ function LoginForm({
             <p>Continue with Google</p>
           </div>
         </button>
-
         <button
           className="w-[352px] border border-solid border-slate-400
        rounded-3xl p-2 mt-1 hover:bg-hovergrey"
@@ -99,7 +97,6 @@ function LoginForm({
             <p>Sign in with Apple</p>
           </div>
         </button>
-
         <div className="mt-7 font-light text-center">
           <span className="font-normal">New to LinkedIn?</span>
           <button className="text-themeblue font-semibold" onClick={joinHandle}>

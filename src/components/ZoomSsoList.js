@@ -1,7 +1,10 @@
-import ssologo from "../assets/sso-logo.svg";
 import applelogo from "../assets/apple-logo.svg";
-import googlelogo from "../assets/google-logo.svg";
 import facebooklogo from "../assets/facebook-logo.svg";
+import googlelogo from "../assets/google-logo.svg";
+import ssologo from "../assets/sso-logo.svg";
+
+const googlePrivacyLink = "https://policies.google.com/privacy";
+const googleTermsLink = "https://policies.google.com/terms";
 
 function ZoomSsoList() {
   const linkHandle = (e) => {
@@ -55,7 +58,6 @@ function ZoomSsoList() {
               <p className="absolute left-5 mt-6">SSO</p>
             </button>
           </div>
-
           <div className="relative w-[85px] h-[86px] hover:text-black">
             <button
               className="border m-2 pl-3 pt-3 pb-3 w-[48px] h-[48px] rounded-2xl hover:bg-[#F0F0F0]"
@@ -67,7 +69,6 @@ function ZoomSsoList() {
               <p className="absolute left-4 mt-5">Apple</p>
             </button>
           </div>
-
           <div className="relative w-[85px] h-[86px] hover:text-black">
             <button
               className="border m-2 p-3 w-[48px] h-[48px] rounded-2xl hover:bg-[#F0F0F0]"
@@ -79,7 +80,6 @@ function ZoomSsoList() {
               <p className="absolute left-2 mt-5">Google</p>
             </button>
           </div>
-
           <div className="relative w-[85px] h-[86px] hover:text-black">
             <button
               className="border m-2 p-3 w-[48px] h-[48px] rounded-2xl hover:bg-[#F0F0F0]"
@@ -95,7 +95,7 @@ function ZoomSsoList() {
         <div className="mt-[32px] text-zoombordergrey ">
           Zoom is protected by reCAPTCHA and the{" "}
           <a
-            href="https://policies.google.com/privacy"
+            href={googlePrivacyLink}
             target="_blank"
             className="text-zoomdarkblue hover:underline underline-offset-2"
           >
@@ -103,7 +103,7 @@ function ZoomSsoList() {
           </a>
           and{" "}
           <a
-            href="https://policies.google.com/terms"
+            href={googleTermsLink}
             target="_blank"
             className="text-zoomdarkblue hover:underline underline-offset-2"
           >

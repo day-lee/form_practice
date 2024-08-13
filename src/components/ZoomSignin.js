@@ -1,26 +1,23 @@
+import { useState } from "react";
+
+import Spinner from "./Spinner";
+
+import info from "../assets/circle-information-svgrepo-com.svg";
 import openwindow from "../assets/window-open.png";
 import passwordHide from "../assets/eye-password-hide-svgrepo-com.svg";
 import passwordShow from "../assets/eye-password-show-svgrepo-com.svg";
-import info from "../assets/circle-information-svgrepo-com.svg";
-import Spinner from "./Spinner";
-import { useState } from "react";
-
-//TODO: signin loading spinning
-
-//CSS
 
 //TODO: select box design
-//TODO: styling - signin btn (default, isLoading, error), sso btn
 //TODO: positioning
 //TODO: responsive - layoutchange
-
 //TODO: stay signed in i hover popup
 //TODO: help hover popup chat
 //TODO: simple auto chat
-
-//TODO -> Linkedin submit enter
+//TODO: Linkedin submit enter
 
 const INNITIAL_VALUES = { zoomemail: "", zoompassword: "" };
+const zoomPrivavyLink = "https://explore.zoom.us/en/privacy/";
+const zoomTermsLink = "https://www.zoom.com/en/trust/terms/";
 
 function ZoomSignin({ helpHandle }) {
   const [formValues, setFormValues] = useState(INNITIAL_VALUES);
@@ -96,16 +93,6 @@ function ZoomSignin({ helpHandle }) {
     window.open("https://zoom.us/signin#/forgot-password", "_blank");
   };
 
-  //   const helpClickHandle = () => {
-  //     helpHandle();
-  //onClick={helpClickHandle}
-  //   };
-
-  //   const passwordVisibleClick = () => {
-  //     setIsVisible(!isVisible);
-  // onClick={passwordVisibleClick}
-  //   };
-
   return (
     <>
       <div>
@@ -127,7 +114,6 @@ function ZoomSignin({ helpHandle }) {
                     Email Address
                   </label>
                 )}
-
                 <input
                   className={`w-full h-12 rounded-lg px-2 mb-4 placeholer:pt-0 placeholder:text-slate-500 
                     focus:placeholder-transparent focus:pt-4 ${
@@ -147,7 +133,6 @@ function ZoomSignin({ helpHandle }) {
                 />
                 <div className="text-zoomred text-sm ">{errorEmail}</div>
               </div>
-
               <div className="relative flex">
                 {isPasswordFocused && (
                   <label
@@ -175,7 +160,6 @@ function ZoomSignin({ helpHandle }) {
                   onFocus={() => setIsPasswordFocused(true)}
                   onBlur={() => setIsPasswordFocused(false)}
                 />
-
                 <div className="absolute flex items-center top-4 right-3  ">
                   <button
                     id="zoomPasswordVisibility"
@@ -244,14 +228,14 @@ function ZoomSignin({ helpHandle }) {
               <p className="text-zoomagreegrey text-sm font-semibold mt-[16px] mb-[10px]">
                 By signing in, I agree to the
                 <span className="text-zoomdarkblue hover:underline underline-offset-2">
-                  <a href="https://explore.zoom.us/en/privacy/" target="_blank">
+                  <a href={zoomPrivavyLink} target="_blank">
                     &nbsp;Zoom's Privacy Statement
                   </a>
                 </span>
                 &nbsp; and &nbsp;
                 <a
                   className="text-zoomdarkblue hover:underline underline-offset-2"
-                  href="https://www.zoom.com/en/trust/terms/"
+                  href={zoomTermsLink}
                   target="_blank"
                 >
                   Terms of Service.
