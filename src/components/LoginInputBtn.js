@@ -47,7 +47,6 @@ function LoginInputBtn({
           </p>
         )}
       </div>
-
       <div className="relative w-full ">
         <label htmlFor="password"></label>
         <input
@@ -84,7 +83,6 @@ function LoginInputBtn({
           )}
         </div>
       </div>
-
       <button
         className="bg-white text-themeblue font-semibold p-1 mt-1
        hover:bg-themelightblue hover:border-themelightblue hover:rounded-3xl"

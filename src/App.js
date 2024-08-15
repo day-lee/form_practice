@@ -1,6 +1,7 @@
 import "./App.css";
 import LoginForm from "./components/LoginForm";
 import linkedin from "./assets/linkedin-logo.png";
+import zoomImg from "./assets/zoom-img.png";
 import { useState } from "react";
 import ZoomPage from "./components/ZoomPage";
 import ZoomHeader from "./components/ZoomHeader";
@@ -63,53 +64,64 @@ function App() {
 
   return (
     <>
-      <div className="flex flex-col relative">
-        <div className="">
-          <p className="text-2xl mb-[500px] pt-10 px-10">
-            Clone coding: Linkedin login form
-          </p>
+      <div className="flex flex-col w-max sm:w-screen justfy-center items-center">
+        <div className="text-2xl p-20 h-10">
+          <p>Clone coding: Linkedin login form</p>
         </div>
-
-        <div className="flex justify-center items-center flex-grow">
-          <div className="absolute bg-white px-5 pt-10 pl-[85px]">
-            <img className="mb-4" src={linkedin} alt="linkedinlogo" />
-
-            <div className="bg-white pt-15 px-16 py-5 justify-center w-[534px] h-[700px]">
-              <h1 className="text-[32px] font-semibold">Sign in</h1>
-              <p className="font-normal mt-1 mb-6 text-[14px]">
-                Stay updated on your professional world.
-              </p>
-              <div className="w-[352px] h-[536px]">
-                <LoginForm
-                  email={email}
-                  password={password}
-                  errorPassword={errorPassword}
-                  errorEmail={errorEmail}
-                  isError={isError}
-                  isDisabled={isDisabled}
-                  isShow={isShow}
-                  onChange={onInputChange}
-                  onSubmit={handleSubmit}
-                  onShow={showHandle}
-                />
+        <div className="h-[750px] ">
+          <div className="relative">
+            <div className="bg-white px-10 pt-10 ">
+              <div className="absolute sm:left-10 left-[123px]">
+                <img className="mb-4" src={linkedin} alt="linkedinlogo" />
+              </div>
+              <div className="flex flex-col items-center pt-20 px-16 py-5 justify-center w-[534px] h-[700px]">
+                <div className="absolute sm:left-[130px] sm:top-20 left-[130px]  top-20">
+                  <h1 className="text-[32px] font-semibold">Sign in</h1>
+                  <p className="font-normal mt-1 mb-6 text-[14px]">
+                    Stay updated on your professional world.
+                  </p>
+                </div>
+                <div className="pt-5 w-[352px] h-[536px]">
+                  <LoginForm
+                    email={email}
+                    password={password}
+                    errorPassword={errorPassword}
+                    errorEmail={errorEmail}
+                    isError={isError}
+                    isDisabled={isDisabled}
+                    isShow={isShow}
+                    onChange={onInputChange}
+                    onSubmit={handleSubmit}
+                    onShow={showHandle}
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div className=" pt-[500px]">
-        <p className="text-2xl pt-10 pb-10 px-10">
-          Clone coding: Zoom login form
-        </p>
-      </div>
+        <div className="text-2xl p-20 h-10">
+          <p>Clone coding: Zoom login form</p>
+        </div>
 
-      <div className="justify-center items-center flex-grow mt-[5px]">
-        <ZoomHeader />
-        <div className="flex relative bg-white pt-15 px-16 py-5 justify-center w-full h-[1000px]">
-          <div className="w-[352px] h-[536px]">
-            {" "}
-            <ZoomPage />
+        <div className="flex flex-col bg-white w-screen">
+          <ZoomHeader />
+
+          <div className="flex relative bg-white w-full sm:h-[900px] h-[1000px]">
+            <div className="bg-zoomgrey w-1/2 sm:p-[6rem]">
+              <div>
+                <div className="pt-[160px]">
+                  {/* desktop img */}
+                  <img src={zoomImg} alt="zoomimg" />
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-col items-center bg-white pt-20 px-16 py-5 w-full sm:h-[900px] h-[1000px]">
+              <div className="w-[352px] h-[536px]">
+                {" "}
+                <ZoomPage />
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -22,7 +22,8 @@ function ZoomPage() {
   return (
     <>
       <div className="">
-        <div>
+        {/* mobile img */}
+        <div className="sm:hidden">
           <img src={zoomImg} alt="zoomimg" />
         </div>
         <ZoomSignin help={isHelp} helpHandle={helpHandle} />

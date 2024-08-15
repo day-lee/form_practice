@@ -12,7 +12,7 @@ function Header() {
   };
   return (
     <>
-      <div className="flex bg-white text-zoomdarkblue font-semibold text-[14px] border-b-2">
+      <div className="flex justify-between relative  bg-white text-zoomdarkblue font-semibold text-[14px] border-b-2">
         <div className="ml-10 py-4">
           <img
             className="bg-white w-[110px] h-[25px]"
@@ -21,7 +21,7 @@ function Header() {
           />
         </div>
         <div className="flex absolute right-0 pt-4">
-          <div className="mr-1 text-black font-normal">
+          <div className="mr-1 text-black hidden sm:inline-flex font-normal">
             <span>New to Zoom? </span>
           </div>
           <div className="mr-10">
@@ -32,7 +32,8 @@ function Header() {
               Sign Up Free
             </button>
           </div>
-          <div className="mr-10">
+
+          <div className="mr-10 hidden sm:inline-flex">
             <button
               className="hover:text-zoomdarkblue hover:underline underline-offset-2"
               onClick={linkSupport}
