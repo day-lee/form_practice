@@ -1,19 +1,25 @@
+import { useState } from "react";
 import downArrow from "../assets/down-arrow.svg";
 import zoomsupport from "../assets/zoomsupport.png";
 
-function ZoomSupport() {
+function ZoomSupport({ close, closeHandle }) {
+  const supportCloseHandle = () => {
+    closeHandle();
+  };
+
   return (
-    <div className="fixed right-0 bottom-0 z-50">
+    <div className={`fixed right-0 bottom-0 z-50 ${close && "hidden"}`}>
       <div className="w-[428px] h-[650px] bg-white z-10 relative ">
         <div className="flex flex-col h-[96px] p-3  border-b border-gray">
           <div className="flex justify-end">
             <div className="flex mx-2 gap-3">
-              <img
-                role="button"
-                className="w-4 h-4 hover:bg-gray-200 mt-1"
-                src={downArrow}
-                alt="close"
-              />
+              <button onClick={supportCloseHandle}>
+                <img
+                  className="w-4 h-4 hover:bg-gray-200 mt-1"
+                  src={downArrow}
+                  alt="close"
+                />
+              </button>
               <span className="bold text-gray-500 font-extrabold">···</span>
             </div>
           </div>

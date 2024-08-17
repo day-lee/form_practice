@@ -11,6 +11,7 @@ import zoomhelpaf from "../assets/zoom-help-2.png";
 function ZoomPage() {
   const [isHelp, setIsHelp] = useState(false);
   const [isHoverd, setIsHovered] = useState(false);
+  const [isClose, setIsClose] = useState(true);
 
   const helpHandle = () => {
     setIsHelp(true);
@@ -18,6 +19,10 @@ function ZoomPage() {
 
   const handleHover = () => {
     setIsHovered(!isHoverd);
+  };
+
+  const handleClose = () => {
+    setIsClose(!isClose);
   };
 
   return (
@@ -30,12 +35,12 @@ function ZoomPage() {
         <ZoomSignin help={isHelp} helpHandle={helpHandle} />
         <ZoomSsoList />
       </div>
-      <ZoomSupport />
-
+      <ZoomSupport close={isClose} closeHandle={handleClose} />
       <button
         className="absolute bottom-10 right-5"
         onMouseEnter={handleHover}
         onMouseLeave={handleHover}
+        onClick={handleClose}
       >
         {isHelp && (
           <img
