@@ -23,6 +23,13 @@ function LoginInputBtn({
     onShowHandle();
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      document.getElementById("linkedinSignin").click();
+    }
+  };
+
   return (
     <>
       <div>
@@ -39,6 +46,7 @@ function LoginInputBtn({
           value={email}
           required
           onChange={onInputChange}
+          onKeyDown={handleKeyDown}
           placeholder="Email"
         />
         {errorEmail && (
@@ -61,6 +69,7 @@ function LoginInputBtn({
           value={password}
           required
           onChange={onInputChange}
+          onKeyDown={handleKeyDown}
           placeholder="Password"
         />
         <div className="absolute h-[30px] inset-y-0 flex right-0 mt-8 items-center pr-3">
@@ -91,6 +100,8 @@ function LoginInputBtn({
         Forgot password?
       </button>
       <button
+        id="linkedinSignin"
+        name="linkedinSignin"
         className="w-[352px] bg-themeblue p-3 rounded-3xl font-semibold text-white mt-5 mb-3 hover:bg-hoverblue"
         type="submit"
         disabled={isDisabled}

@@ -47,7 +47,7 @@ function ZoomSignin({ helpHandle }) {
     setFormValues((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleKeyPress = (e) => {
+  const handleKeyDown = (e) => {
     if (e.key === "Enter") {
       e.preventDefault();
       document.getElementById("zoomSignIn").click();
@@ -125,7 +125,7 @@ function ZoomSignin({ helpHandle }) {
                   name="zoomemail"
                   value={zoomemail}
                   onChange={onInputChange}
-                  onKeyPress={handleKeyPress}
+                  onKeyDown={handleKeyDown}
                   placeholder="Email Address"
                   onFocus={() => setIsEmailFocused(true)}
                   onBlur={() => setIsEmailFocused(false)}
@@ -154,7 +154,7 @@ function ZoomSignin({ helpHandle }) {
                   name="zoompassword"
                   value={zoompassword}
                   onChange={onInputChange}
-                  onKeyPress={handleKeyPress}
+                  onKeyDown={handleKeyDown}
                   placeholder="Password"
                   onFocus={() => setIsPasswordFocused(true)}
                   onBlur={() => setIsPasswordFocused(false)}
