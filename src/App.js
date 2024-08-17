@@ -1,10 +1,12 @@
+import { useState } from "react";
+
 import "./App.css";
 import LoginForm from "./components/LoginForm";
-import linkedin from "./assets/linkedin-logo.png";
-import zoomImg from "./assets/zoom-img.png";
-import { useState } from "react";
 import ZoomPage from "./components/ZoomPage";
 import ZoomHeader from "./components/ZoomHeader";
+
+import linkedin from "./assets/linkedin-logo.png";
+import zoomImg from "./assets/zoom-img.png";
 
 const INITIAL_DATA = { email: "", password: "" };
 function App() {

@@ -8,8 +8,7 @@ import passwordHide from "../assets/eye-password-hide-svgrepo-com.svg";
 import passwordShow from "../assets/eye-password-show-svgrepo-com.svg";
 
 //TODO: select box design
-//TODO: positioning
-//TODO: responsive - layoutchange
+// image with login form - flex wrap?
 //TODO: stay signed in i hover popup
 //TODO: help hover popup chat
 //TODO: simple auto chat
