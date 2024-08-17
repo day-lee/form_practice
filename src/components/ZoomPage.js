@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import ZoomSignin from "./ZoomSignin";
 import ZoomSsoList from "./ZoomSsoList";
+import ZoomSupport from "./ZoomSupport";
 
 import zoomImg from "../assets/zoom-img.png";
 import zoomhelpbf from "../assets/zoom-help-1.png";
@@ -29,6 +30,8 @@ function ZoomPage() {
         <ZoomSignin help={isHelp} helpHandle={helpHandle} />
         <ZoomSsoList />
       </div>
+      <ZoomSupport />
+
       <button
         className="absolute bottom-10 right-5"
         onMouseEnter={handleHover}

@@ -8,11 +8,9 @@ import passwordHide from "../assets/eye-password-hide-svgrepo-com.svg";
 import passwordShow from "../assets/eye-password-show-svgrepo-com.svg";
 
 //TODO: select box design
-// image with login form - flex wrap?
 //TODO: stay signed in i hover popup
 //TODO: help hover popup chat
 //TODO: simple auto chat
-//TODO: Linkedin submit enter
 
 const INNITIAL_VALUES = { zoomemail: "", zoompassword: "" };
 const zoomPrivavyLink = "https://explore.zoom.us/en/privacy/";

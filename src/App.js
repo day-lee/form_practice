@@ -101,14 +101,11 @@ function App() {
             </div>
           </div>
         </div>
-
         <div className="text-2xl p-20 h-10">
           <p>Clone coding: Zoom login form</p>
         </div>
-
         <div className="flex flex-col bg-white w-screen">
           <ZoomHeader />
-
           <div className="flex relative bg-white w-full sm:h-[900px] h-[1000px]">
             <div className="bg-zoomgrey w-1/2 sm:p-[6rem]">
               <div>

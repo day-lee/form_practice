@@ -29,6 +29,8 @@ module.exports = {
         zoombordergrey: "#6e7680",
         zoomsigningrey: "#f1f4f6",
         zoomsignindarkgrey: "#6e7680",
+        zoomchatblue: "#0e72ed",
+        zoomarrowhovergrey: "#52528017",
       },
     },
   },
