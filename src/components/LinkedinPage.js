@@ -51,7 +51,7 @@ function LinkedinPage() {
       setFormValues(INITIAL_DATA);
     } else {
       setFormValues(INITIAL_DATA);
-      alert(`You have successfully logged in as ${email}`);
+      alert(`Linkedin: You have successfully logged in as ${email}`);
       setErrorValues((prev) => ({
         errorEmail: "",
         errorPassword: "",
@@ -65,38 +65,32 @@ function LinkedinPage() {
   };
 
   return (
-    <>
-      <div className="flex flex-col w-max sm:w-screen justfy-center items-center">
-        <div className="h-[750px] ">
-          <div className="relative">
-            <div className="bg-white px-10 pt-10 ">
-              <div className="absolute sm:left-10 left-[123px]">
-                <img className="mb-4" src={linkedin} alt="linkedinlogo" />
-              </div>
-              <div className="flex flex-col items-center pt-20 px-16 py-5 justify-center w-[534px] h-[700px]">
-                <div className="absolute sm:left-[130px] sm:top-20 left-[130px]  top-20">
-                  <h1 className="text-[32px] font-semibold">Sign in</h1>
-                  <p className="font-normal mt-1 mb-6 text-[14px]">
-                    Stay updated on your professional world.
-                  </p>
-                </div>
-                <div className="pt-5 w-[352px] h-[536px]">
-                  <LinkedinLoginForm
-                    formValues={formValues}
-                    errorValues={errorValues}
-                    isDisabled={isDisabled}
-                    isPasswordShown={isPasswordShown}
-                    onChange={onInputChange}
-                    onSubmit={onSubmit}
-                    onShow={showHandle}
-                  />
-                </div>
-              </div>
-            </div>
+    <div className="flex justify-center items-center bg-white h-[800px]">
+      <div className="relative px-10 pt-10">
+        <div className="absolute sm:left-10 left-[123px]">
+          <img className="mb-4" src={linkedin} alt="linkedinlogo" />
+        </div>
+        <div className="flex flex-col items-center pt-20  py-5 justify-center sm:w-[534px] h-[700px]">
+          <div className="absolute sm:left-[130px] sm:top-20 left-[130px] top-20">
+            <h1 className="text-[32px] font-semibold">Sign in</h1>
+            <p className="font-normal mt-1 mb-6 text-[14px]">
+              Stay updated on your professional world.
+            </p>
+          </div>
+          <div className="pt-5 w-[352px] h-[536px]">
+            <LinkedinLoginForm
+              formValues={formValues}
+              errorValues={errorValues}
+              isDisabled={isDisabled}
+              isPasswordShown={isPasswordShown}
+              onChange={onInputChange}
+              onSubmit={onSubmit}
+              onShow={showHandle}
+            />
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

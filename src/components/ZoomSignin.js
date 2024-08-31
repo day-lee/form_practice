@@ -70,7 +70,7 @@ function ZoomSignin({ helpHandle }) {
       } else {
         setIsLoading(true);
         const timer = setTimeout(() => {
-          alert(`You have successfully logged in as ${zoomemail} `);
+          alert(`Zoom: You have successfully logged in as ${zoomemail} `);
           setFormValues(INNITIAL_VALUES);
           setIsLoading(false);
         }, 2000);
