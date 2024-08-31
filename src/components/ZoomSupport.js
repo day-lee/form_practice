@@ -1,4 +1,3 @@
-import { useState } from "react";
 import downArrow from "../assets/down-arrow.svg";
 import zoomsupport from "../assets/zoomsupport.png";
 
@@ -9,7 +8,7 @@ function ZoomSupport({ close, closeHandle }) {
 
   return (
     <div className={`fixed right-0 bottom-0 z-50 ${close && "hidden"}`}>
-      <div className="w-[428px] h-[650px] bg-white z-10 relative ">
+      <div className="w-[428px] h-[650px] bg-white">
         <div className="flex flex-col h-[96px] p-3  border-b border-gray">
           <div className="flex justify-end">
             <div className="flex mx-2 gap-3">
@@ -54,29 +53,26 @@ function ZoomSupport({ close, closeHandle }) {
                 </div>
               </div>
             </div>
-
             <div className="flex flex-col justify-start gap-5 ">
               <div className="flex justify-between items-center gap-3">
-                <div className="w-[55px]"> </div>
+                <div className="w-[60px]"> </div>
                 <div className="bg-zoomsigningrey rounded-xl p-3 ">
                   Hi, I'm Zoe 🤖. Zoom's Virtual Agent for technical{" "}
                   <b>Support</b> and <b>Billing</b>.
                 </div>
               </div>
             </div>
-
             <div className="flex flex-col justify-start gap-5 ">
               <div className="flex justify-between items-center gap-3">
-                <div className="w-[70px]"> </div>
+                <div className="w-[80px]"> </div>
                 <div className="bg-zoomsigningrey rounded-xl p-3 ">
                   It looks like you need help accessing your Zoom account. I'm
                   here to help! How can I assist you?
                 </div>
               </div>
             </div>
-
             <div className="text-zoomchatblue font-bold flex mb-20">
-              <div className="w-[115px]"> </div>
+              <div className="w-[125px]"> </div>
               <div className="">
                 <div className="inline-block border border-zoomchatblue rounded-3xl px-4 py-1.5 m-1">
                   My Account is Locked

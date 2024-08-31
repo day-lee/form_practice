@@ -3,13 +3,13 @@ import LoginInputBtn from "./LoginInputBtn.js";
 import apple from "../assets/apple-logo.png";
 import google from "../assets/google-logo.png";
 
-function LoginForm({
+function LinkedinLoginForm({
   email,
   password,
   errorEmail,
   errorPassword,
   isError,
-  isShow,
+  isPasswordShown,
   isDisabled,
   onChange,
   onSubmit,
@@ -57,7 +57,7 @@ function LoginForm({
           errorEmail={errorEmail}
           errorPassword={errorPassword}
           isError={isError}
-          isShow={isShow}
+          isPasswordShown={isPasswordShown}
           isDisabled={isDisabled}
           onInputChangeHandle={onInputChange}
           onShowHandle={showHandle}
@@ -108,4 +108,4 @@ function LoginForm({
   );
 }
 
-export default LoginForm;
+export default LinkedinLoginForm;

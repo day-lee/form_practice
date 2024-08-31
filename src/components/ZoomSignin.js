@@ -3,14 +3,13 @@ import { useState } from "react";
 import Spinner from "./Spinner";
 
 import info from "../assets/circle-information-svgrepo-com.svg";
-import openwindow from "../assets/window-open.png";
 import passwordHide from "../assets/eye-password-hide-svgrepo-com.svg";
 import passwordShow from "../assets/eye-password-show-svgrepo-com.svg";
+import openwindow from "../assets/window-open.png";
 
 //TODO: select box design
 //TODO: stay signed in i hover popup
-//TODO: help hover popup chat
-//TODO: simple auto chat
+//TODO: support: simple auto chat
 
 const INNITIAL_VALUES = { zoomemail: "", zoompassword: "" };
 const zoomPrivavyLink = "https://explore.zoom.us/en/privacy/";

@@ -4,7 +4,7 @@ function LoginInputBtn({
   errorEmail,
   errorPassword,
   isError,
-  isShow,
+  isPasswordShown,
   isDisabled,
   onInputChangeHandle,
   onShowHandle,
@@ -65,7 +65,7 @@ function LoginInputBtn({
           }`}
           id="password"
           name="password"
-          type={isShow ? "text" : "password"}
+          type={isPasswordShown ? "text" : "password"}
           value={password}
           required
           onChange={onInputChange}
@@ -81,7 +81,7 @@ function LoginInputBtn({
             onClick={showHandle}
             type="button"
           >
-            {!isShow ? "show" : "hide"}
+            {!isPasswordShown ? "show" : "hide"}
           </button>
         </div>
         <div>
