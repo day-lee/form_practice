@@ -1,26 +1,18 @@
-function LoginInputBtn({
-  email,
-  password,
-  errorEmail,
-  errorPassword,
-  isError,
+function LinkedinLoginInputBtn({
+  formValues,
+  errorValues,
   isPasswordShown,
   isDisabled,
   onInputChangeHandle,
   onShowHandle,
 }) {
+  const { email, password } = formValues;
+  const { errorEmail, errorPassword, isError } = errorValues;
   const forgotHandle = () => {
     window.open(
       "https://www.linkedin.com/checkpoint/rp/request-password-reset",
       "_blank"
     );
-  };
-
-  const onInputChange = (e) => {
-    onInputChangeHandle(e);
-  };
-  const showHandle = () => {
-    onShowHandle();
   };
 
   const handleKeyDown = (e) => {
@@ -38,14 +30,14 @@ function LoginInputBtn({
           className={`w-[352px] h-[52px]  rounded p-2 mt-1 ${
             !isError
               ? "border border-solid border-slate-500"
-              : "border border-2 border-red-500"
+              : "border border-red-500"
           }`}
           id="email"
           name="email"
           type="text"
           value={email}
           required
-          onChange={onInputChange}
+          onChange={(e) => onInputChangeHandle(e)}
           onKeyDown={handleKeyDown}
           placeholder="Email"
         />
@@ -58,17 +50,17 @@ function LoginInputBtn({
       <div className="relative w-full ">
         <label htmlFor="password"></label>
         <input
-          className={`w-full w-[352px] h-[52px]  rounded p-2 mt-5 ${
+          className={`w-[352px] h-[52px]  rounded p-2 mt-5 ${
             !isError
               ? "border border-solid border-slate-500"
-              : "border border-2 border-red-500"
+              : "border border-red-500"
           }`}
           id="password"
           name="password"
           type={isPasswordShown ? "text" : "password"}
           value={password}
           required
-          onChange={onInputChange}
+          onChange={(e) => onInputChangeHandle(e)}
           onKeyDown={handleKeyDown}
           placeholder="Password"
         />
@@ -78,7 +70,7 @@ function LoginInputBtn({
              hover:bg-themelightblue hover:border-themeblue hover:rounded-3xl hover: pl-2 pr-2 "
             fill="currentColor"
             viewBox="0 0 20 20"
-            onClick={showHandle}
+            onClick={onShowHandle}
             type="button"
           >
             {!isPasswordShown ? "show" : "hide"}
@@ -112,4 +104,4 @@ function LoginInputBtn({
   );
 }
 
-export default LoginInputBtn;
+export default LinkedinLoginInputBtn;

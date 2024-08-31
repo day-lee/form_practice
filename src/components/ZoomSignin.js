@@ -1,14 +1,12 @@
 import { useState } from "react";
 
-import Spinner from "./Spinner";
+import ZoomSpinner from "./ZoomSpinner";
 
 import info from "../assets/circle-information-svgrepo-com.svg";
 import passwordHide from "../assets/eye-password-hide-svgrepo-com.svg";
 import passwordShow from "../assets/eye-password-show-svgrepo-com.svg";
 import openwindow from "../assets/window-open.png";
 
-//TODO: select box design
-//TODO: stay signed in i hover popup
 //TODO: support: simple auto chat
 
 const INNITIAL_VALUES = { zoomemail: "", zoompassword: "" };
@@ -214,7 +212,7 @@ function ZoomSignin({ helpHandle }) {
               >
                 {isLoading && (
                   <div className="absolute left-5 top-4">
-                    <Spinner />
+                    <ZoomSpinner />
                   </div>
                 )}
                 Sign In

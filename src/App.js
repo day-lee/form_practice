@@ -14,7 +14,6 @@ function App() {
           </div>
           <LinkedinPage />
         </div>
-
         <div className="text-2xl p-20 h-10">
           <p>Clone coding: Zoom login form</p>
         </div>
@@ -31,7 +30,6 @@ function App() {
             </div>
             <div className="flex flex-col items-center bg-white pt-20 px-16 py-5 w-full sm:h-[900px] h-[1000px]">
               <div className="w-[352px] h-[536px]">
-                {" "}
                 <ZoomPage />
               </div>
             </div>

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Spinner = () => {
+const ZoomSpinner = () => {
   return (
     <div className="flex justify-center items-center h-[6px]">
       <div className="relative w-2 h-2">
@@ -23,4 +23,4 @@ const Spinner = () => {
   );
 };
 
-export default Spinner;
+export default ZoomSpinner;

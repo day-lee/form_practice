@@ -1,21 +1,17 @@
-import LoginInputBtn from "./LoginInputBtn.js";
+import LinkedinLoginInputBtn from "./LinkedinLoginInputBtn.js";
 
 import apple from "../assets/apple-logo.png";
 import google from "../assets/google-logo.png";
 
 function LinkedinLoginForm({
-  email,
-  password,
-  errorEmail,
-  errorPassword,
-  isError,
+  formValues,
+  errorValues,
   isPasswordShown,
   isDisabled,
   onChange,
   onSubmit,
   onShow,
 }) {
-  //console.log(LoginInputBtn);
   const googleHandle = () => {
     window.open(
       "https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Faccounts.google.com%2Fgsi%2Fselect%3Fclient_id%3D990339570472-k6nqn1tpmitg8pui82bfaun3jrpmiuhs.apps.googleusercontent.com%26auto_select%3Dfalse%26ux_mode%3Dpopup%26ui_mode%3Dcard%26context%3Dsignin%26as%3Dj36xhruNcEKnS83Olo%252BCDw%26channel_id%3Db9d9c32e7fea98d9512405769e55afd3dcaa9731f29c56be8b33f93921901229%26origin%3Dhttps%3A%2F%2Fwww.linkedin.com&faa=1&ifkv=AdF4I75Pg8vgU6g3iw0fwg4_gHsZKYFxwTT7SbqAl8MPScchLy9nm61kEYdNDFvKTK4l0lXK2hlXZQ&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S673158336%3A1722630480496456&ddm=0",
@@ -36,31 +32,16 @@ function LinkedinLoginForm({
     window.open("https://www.linkedin.com/signup/cold-join", "_blank");
   };
 
-  const onInputChange = (e) => {
-    onChange(e);
-  };
-
-  const handleSubmit = (e) => {
-    onSubmit(e);
-  };
-
-  const showHandle = () => {
-    onShow();
-  };
-
   return (
     <>
-      <form id="linkedinform" onSubmit={handleSubmit}>
-        <LoginInputBtn
-          email={email}
-          password={password}
-          errorEmail={errorEmail}
-          errorPassword={errorPassword}
-          isError={isError}
+      <form id="linkedinform" onSubmit={(e) => onSubmit(e)}>
+        <LinkedinLoginInputBtn
+          formValues={formValues}
+          errorValues={errorValues}
           isPasswordShown={isPasswordShown}
           isDisabled={isDisabled}
-          onInputChangeHandle={onInputChange}
-          onShowHandle={showHandle}
+          onInputChangeHandle={(e) => onChange(e)}
+          onShowHandle={onShow}
         />
         <div className="flex justify-center text-[14px] text-center text-themgray">
           <span className="block border-b border-gray w-1/2 mx-auto mb-2"></span>

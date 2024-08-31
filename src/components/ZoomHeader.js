@@ -1,6 +1,5 @@
-import LanguageDropdown from "./LanguageDropdown.js";
-
 import zoomLogo from "../assets/zoom-logo.png";
+import ZoomLanguageDropdown from "./ZoomLanguageDropdown.js";
 
 function Header() {
   const linkSignup = () => {
@@ -42,7 +41,7 @@ function Header() {
             </button>
           </div>
           <div className="mr-10 hover:bg-blue">
-            <LanguageDropdown />
+            <ZoomLanguageDropdown />
           </div>
         </div>
       </div>

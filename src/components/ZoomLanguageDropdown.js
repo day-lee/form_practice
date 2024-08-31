@@ -1,4 +1,4 @@
-function LanguageDropdown() {
+function ZoomLanguageDropdown() {
   return (
     <>
       <div className="text-zoomblue bg-white">
@@ -28,4 +28,4 @@ function LanguageDropdown() {
     </>
   );
 }
-export default LanguageDropdown;
+export default ZoomLanguageDropdown;
