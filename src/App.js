@@ -10,12 +10,12 @@ function App() {
       <div className="flex flex-col justfy-center items-center ">
         <div className="flex flex-col h-[900px] w-max sm:w-screen justfy-center items-center">
           <div className="text-2xl p-20 h-10">
-            <p>Clone coding: Linkedin login form</p>
+            <p>Clone coding: Linkedin Sign in form</p>
           </div>
           <LinkedinPage />
         </div>
         <div className="text-2xl p-20 h-10">
-          <p>Clone coding: Zoom login form</p>
+          <p>Clone coding: Zoom Sign in form</p>
         </div>
         <div className="flex flex-col bg-white w-screen">
           <ZoomHeader />

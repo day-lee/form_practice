@@ -6,6 +6,13 @@ function ZoomSupport({ close, closeHandle }) {
     closeHandle();
   };
 
+  const now = new Date();
+  const formattedTime = new Intl.DateTimeFormat("en-US", {
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true,
+  }).format(now);
+
   return (
     <div className={`fixed right-0 bottom-0 z-50 ${close && "hidden"}`}>
       <div className="w-[428px] h-[650px] bg-white">
@@ -45,7 +52,7 @@ function ZoomSupport({ close, closeHandle }) {
                   <span className="inline-block bg-gray-100 text-gray-500 px-1 mx-1 font-bold">
                     BOT
                   </span>{" "}
-                  <span className="text-gray-400 ">11:26 AM </span>
+                  <span className="text-gray-400 ">{formattedTime}</span>
                 </div>
                 <div className="bg-zoomsigningrey rounded-xl p-3 italic">
                   Zoom may retain your chat transcript to use for quality,

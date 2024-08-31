@@ -1,7 +1,7 @@
 import LinkedinLoginInputBtn from "./LinkedinLoginInputBtn.js";
 
-import apple from "../assets/apple-logo.png";
-import google from "../assets/google-logo.png";
+import apple from "../assets/apple-logo.svg";
+import google from "../assets/google-logo.svg";
 
 function LinkedinLoginForm({
   formValues,
@@ -64,7 +64,7 @@ function LinkedinLoginForm({
           onClick={googleHandle}
         >
           <div className="flex justify-center">
-            <img className="mx-1 mt-1 h-5" src={google} alt="googlelogo" />
+            <img className="mx-1 mt-[2px] h-5" src={google} alt="googlelogo" />
             <p>Continue with Google</p>
           </div>
         </button>

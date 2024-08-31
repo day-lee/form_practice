@@ -1,7 +1,7 @@
 import zoomLogo from "../assets/zoom-logo.png";
 import ZoomLanguageDropdown from "./ZoomLanguageDropdown.js";
 
-function Header() {
+function ZoomHeader() {
   const linkSignup = () => {
     window.open("https://zoom.us/signup#/signup", "_blank");
   };
@@ -49,4 +49,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default ZoomHeader;
