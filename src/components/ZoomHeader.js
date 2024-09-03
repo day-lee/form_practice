@@ -23,7 +23,7 @@ function ZoomHeader() {
           <div className="mr-1 text-black hidden sm:inline-flex font-normal">
             <span>New to Zoom? </span>
           </div>
-          <div className="mr-10">
+          <div className=" mr-3 sm:mr-10">
             <button
               className="hover:underline underline-offset-2"
               onClick={linkSignup}

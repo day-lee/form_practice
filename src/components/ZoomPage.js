@@ -31,16 +31,16 @@ function ZoomPage() {
       <div className="flex flex-col bg-white w-screen">
         <ZoomHeader />
         <div className="flex relative bg-white w-full sm:h-[900px] h-[1000px]">
+          {/* desktop img */}
           <div className="bg-zoomgrey w-1/2 sm:p-[6rem]">
             <div>
-              <div className="pt-[160px]">
-                {/* desktop img */}
+              <div className="hidden sm:pt-[160px] sm:inline-block">
                 <img src={zoomImg} alt="zoomimg" />
               </div>
             </div>
           </div>
           <div className="flex flex-col items-center bg-white pt-20 px-16 py-5 w-full sm:h-[900px] h-[1000px]">
-            <div className="w-[352px] h-[536px]">
+            <div className="w-[252px] sm:w-[352px] h-[536px]">
               <div className="">
                 {/* mobile img */}
                 <div className="sm:hidden">
