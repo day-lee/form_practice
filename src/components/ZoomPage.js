@@ -14,10 +14,6 @@ function ZoomPage() {
   const [isHoverd, setIsHovered] = useState(false);
   const [isClose, setIsClose] = useState(true);
 
-  const helpHandle = () => {
-    setIsHelp(true);
-  };
-
   const handleHover = () => {
     setIsHovered(!isHoverd);
   };
@@ -46,7 +42,7 @@ function ZoomPage() {
                 <div className="sm:hidden">
                   <img src={zoomImg} alt="zoomimg" />
                 </div>
-                <ZoomSignin help={isHelp} helpHandle={helpHandle} />
+                <ZoomSignin help={isHelp} helpHandle={() => setIsHelp(true)} />
                 <ZoomSsoList />
               </div>
               <ZoomSupport close={isClose} closeHandle={handleClose} />

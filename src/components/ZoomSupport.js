@@ -2,10 +2,6 @@ import downArrow from "../assets/down-arrow.svg";
 import zoomsupport from "../assets/zoomsupport.png";
 
 function ZoomSupport({ close, closeHandle }) {
-  const supportCloseHandle = () => {
-    closeHandle();
-  };
-
   const now = new Date();
   const formattedTime = new Intl.DateTimeFormat("en-US", {
     hour: "numeric",
@@ -19,7 +15,7 @@ function ZoomSupport({ close, closeHandle }) {
         <div className="flex flex-col h-[96px] p-3  border-b border-gray">
           <div className="flex justify-end">
             <div className="flex mx-2 gap-3">
-              <button onClick={supportCloseHandle}>
+              <button onClick={closeHandle}>
                 <img
                   className="w-4 h-4 hover:bg-gray-200 mt-1"
                   src={downArrow}

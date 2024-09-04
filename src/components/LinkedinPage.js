@@ -12,8 +12,8 @@ function LinkedinPage() {
   const [errorValues, setErrorValues] = useState(DEFAULT_ERROR);
   const [isDisabled, setIsDisabled] = useState(false);
   const [isPasswordShown, setIsPasswordShown] = useState(false);
+
   const { email, password } = formValues;
-  const { isError } = errorValues;
 
   const validateEmail = (email) => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -41,7 +41,7 @@ function LinkedinPage() {
         isError: true,
       }));
       setFormValues(INITIAL_DATA);
-    } else if (password !== "1234") {
+    } else if (password !== "snrnsk!@") {
       setErrorValues((prev) => ({
         ...prev,
         errorPassword:
@@ -67,11 +67,11 @@ function LinkedinPage() {
   return (
     <div className="flex justify-center items-center bg-white h-[800px]">
       <div className="relative px-10 pt-10">
-        <div className="absolute sm:left-10 left-[123px]">
+        <div className="absolute sm:left-10 ">
           <img className="mb-4" src={linkedin} alt="linkedinlogo" />
         </div>
         <div className="flex flex-col items-center pt-20  py-5 justify-center sm:w-[534px] h-[700px]">
-          <div className="absolute sm:left-[130px] sm:top-20 left-[130px] top-20">
+          <div className="absolute left-10 sm:left-[130px] top-20 sm:top-20 ">
             <h1 className="text-[32px] font-semibold">Sign in</h1>
             <p className="font-normal mt-1 mb-6 text-[14px]">
               Stay updated on your professional world.

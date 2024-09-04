@@ -7,24 +7,29 @@ import passwordHide from "../assets/eye-password-hide-svgrepo-com.svg";
 import passwordShow from "../assets/eye-password-show-svgrepo-com.svg";
 import openwindow from "../assets/window-open.png";
 
-//TODO: support: simple auto chat
-
 const INNITIAL_VALUES = { zoomemail: "", zoompassword: "" };
+const ERROR_VALUES = {
+  error: false,
+  errorEmail: "",
+  errorPassword: "",
+  isBothError: false,
+  errorMsg: "",
+};
+const forgotPWLink = "https://zoom.us/signin#/forgot-password";
 const zoomPrivavyLink = "https://explore.zoom.us/en/privacy/";
 const zoomTermsLink = "https://www.zoom.com/en/trust/terms/";
 
 function ZoomSignin({ helpHandle }) {
   const [formValues, setFormValues] = useState(INNITIAL_VALUES);
+  const [errorValues, setErrorValues] = useState(ERROR_VALUES);
   const [isVisible, setIsVisible] = useState(false);
-  const [error, setError] = useState(false);
-  const [errorEmail, setErrorEmail] = useState("");
-  const [errorPassword, setErrorPassword] = useState("");
-  const [isBothError, setIsBothError] = useState(false);
-  const [errorMsg, setErrorMsg] = useState("");
   const [isEmailFocused, setIsEmailFocused] = useState(false);
   const [isPasswordFocused, setIsPasswordFocused] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+
   const { zoomemail, zoompassword } = formValues;
+  const { error, errorEmail, errorPassword, isBothError, errorMsg } =
+    errorValues;
 
   const validateEmail = (email) => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -32,13 +37,15 @@ function ZoomSignin({ helpHandle }) {
   };
 
   const onInputChange = (e) => {
-    setErrorEmail("");
-    setErrorPassword("");
-    setErrorMsg("");
-    setError(false);
-    setIsBothError(false);
+    setErrorValues((prev) => ({
+      ...prev,
+      errorEmail: "",
+      errorPassword: "",
+      errorMsg: "",
+      error: false,
+      isBothError: false,
+    }));
     const { name, value } = e.target;
-    // Change the formValues as entered
     setFormValues((prev) => ({ ...prev, [name]: value }));
   };
 
@@ -54,19 +61,26 @@ function ZoomSignin({ helpHandle }) {
 
     const buttonName = e.nativeEvent.submitter.name;
     if (buttonName === "zoomSignin") {
-      // Validate the formValues to show error msg or comple the login
       if (zoomemail === "" && zoompassword === "") {
-        setError(true);
-        setErrorEmail("Please enter your email address");
-        setErrorPassword("Please enter your password");
+        setErrorValues((prev) => ({
+          ...prev,
+          errorEmail: "Please enter your email address",
+          errorPassword: "Please enter your password",
+          error: true,
+        }));
       } else if (!validateEmail(zoomemail)) {
-        setError(true);
-        setErrorEmail("Please enter a valid email address.");
-      } else if (zoompassword !== "1234") {
-        setIsBothError(true);
-        setErrorMsg(
-          "Incorrect email or password. Enter your sign ininformation again, or request an email to gain access to your account."
-        );
+        setErrorValues((prev) => ({
+          ...prev,
+          errorEmail: "Please enter your email address",
+          error: true,
+        }));
+      } else if (zoompassword !== "snrnsk!@") {
+        setErrorValues((prev) => ({
+          ...prev,
+          isBothError: true,
+          errorMsg:
+            "Incorrect email or password. Enter your sign ininformation again, or request an email to gain access to your account.",
+        }));
       } else {
         setIsLoading(true);
         const timer = setTimeout(() => {
@@ -84,7 +98,7 @@ function ZoomSignin({ helpHandle }) {
   };
 
   const forgotHandle = () => {
-    window.open("https://zoom.us/signin#/forgot-password", "_blank");
+    window.open(forgotPWLink, "_blank");
   };
 
   return (
@@ -97,7 +111,11 @@ function ZoomSignin({ helpHandle }) {
           >
             Sign In
           </p>
-          <form className="w-[346px]" onSubmit={submitHandle} id="zoomForm">
+          <form
+            className="w-[246px] sm:w-[346px]"
+            onSubmit={submitHandle}
+            id="zoomForm"
+          >
             <div>
               <div className="relative mb-2">
                 {isEmailFocused && (
@@ -181,7 +199,7 @@ function ZoomSignin({ helpHandle }) {
               </button>
               <button
                 className="flex text-zoomdarkblue font-semibold text-sm py-2 hover:text-zoomhoverblue 
-                underline-offset-auto hover:underline underline-offset-2"
+                 hover:underline underline-offset-2"
                 name="zoomHelp"
               >
                 Help
@@ -222,7 +240,7 @@ function ZoomSignin({ helpHandle }) {
               <p className="text-zoomagreegrey text-sm font-semibold mt-[16px] mb-[10px]">
                 By signing in, I agree to the
                 <span className="text-zoomdarkblue hover:underline underline-offset-2">
-                  <a href={zoomPrivavyLink} target="_blank">
+                  <a href={zoomPrivavyLink} target="_blank" rel="noreferrer">
                     &nbsp;Zoom's Privacy Statement
                   </a>
                 </span>
@@ -231,6 +249,7 @@ function ZoomSignin({ helpHandle }) {
                   className="text-zoomdarkblue hover:underline underline-offset-2"
                   href={zoomTermsLink}
                   target="_blank"
+                  rel="noreferrer"
                 >
                   Terms of Service.
                 </a>
@@ -239,7 +258,7 @@ function ZoomSignin({ helpHandle }) {
                 <p className="text-zoombordergrey text-sm mt-[8px] font-medium">
                   <input type="checkbox" /> Stay signed in &nbsp;
                 </p>
-                <img className="w-4 h-4 mt-2" src={info} />
+                <img className="w-4 h-4 mt-2" src={info} alt="info" />
               </div>
             </div>
           </form>
