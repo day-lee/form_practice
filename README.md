@@ -1,9 +1,10 @@
 # Clone coding project
+### Linkedin & Zoom login form 
 
-![image](https://github.com/user-attachments/assets/56e5bb34-b42f-4dcf-8046-c456c0b2c8a9)
+![image](https://github.com/user-attachments/assets/b2bfecaa-4c44-4865-a8e8-701baf4b7376)
 
 ## 🗝️ Key Features 
-- Login Validation
+- Login validation
 - SPA routing
 - Responsive and accessible design
 - Popup chatbot for zoom support 
