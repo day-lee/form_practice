@@ -6,12 +6,12 @@ import ZoomPage from "./components/ZoomPage";
 
 export function MainPage() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/react-login-form">
       <App>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="linkedin" element={<LinkedinPage />} />
-          <Route path="zoom" element={<ZoomPage />} />
+          <Route path="/linkedin" element={<LinkedinPage />} />
+          <Route path="/zoom" element={<ZoomPage />} />
         </Routes>
       </App>
     </BrowserRouter>

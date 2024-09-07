@@ -7,8 +7,8 @@ function HomePage() {
   return (
     <>
       <div className="w-full h-full">
-        <div className="flex justify-center px-10 pt-20">
-          <div className="text-4xl font-bold text-blue-950">
+        <div className="flex justify-center items-center sm:px-10 sm:pt-20">
+          <div className="pt-20 text-xl sm:text-4xl font-bold text-blue-950">
             Click the card to view a live demo!
             <br />
           </div>
