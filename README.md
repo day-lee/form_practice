@@ -1,7 +1,7 @@
-# Clone coding project
+# [Clone coding project](https://day-lee.github.io/react-login-form/)
 ### Linkedin & Zoom login form 
 
-![image](https://github.com/user-attachments/assets/b2bfecaa-4c44-4865-a8e8-701baf4b7376)
+[![image](https://github.com/user-attachments/assets/b2bfecaa-4c44-4865-a8e8-701baf4b7376)](https://day-lee.github.io/react-login-form/)
 
 ## 🗝️ Key Features 
 - Login validation
