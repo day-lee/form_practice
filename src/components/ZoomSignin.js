@@ -74,7 +74,7 @@ function ZoomSignin({ helpHandle }) {
           errorEmail: "Please enter your email address",
           error: true,
         }));
-      } else if (zoompassword !== "snrnsk!@") {
+      } else if (zoompassword !== "1234abc!") {
         setErrorValues((prev) => ({
           ...prev,
           isBothError: true,

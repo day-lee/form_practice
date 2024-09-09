@@ -41,7 +41,7 @@ function LinkedinPage() {
         isError: true,
       }));
       setFormValues(INITIAL_DATA);
-    } else if (password !== "snrnsk!@") {
+    } else if (password !== "1234abc!") {
       setErrorValues((prev) => ({
         ...prev,
         errorPassword:

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 import "./App.css";
+import CopyText from "./CopyText";
 import Footer from "./Footer";
 
 import linkedin from "../assets/icons8-linkedin.svg";
@@ -20,10 +21,10 @@ function App({ children }) {
             </div>
           </Link>
           <div className="flex items-center">
-            <div className="flex flex-col sm:flex-row mr-3">
+            <div className=" flex-col sm:flex-row mr-3 hidden sm:flex">
               <Link to="/linkedin">
                 <img
-                  className="w-13 h-13 mb-2 sm:mb-0 mr-2"
+                  className="w-13 h-13 mb-2 sm:mb-0 mr-2 "
                   src={linkedin}
                   alt="linkedin"
                 />
@@ -32,10 +33,16 @@ function App({ children }) {
                 <img className="w-11 h-12" src={zoom} alt="zoom" />
               </Link>
             </div>
-            <div>
-              <p className="text-sm text-gray-300">Test login credentials</p>
-              <p className="text-xs">test@example.com</p>
-              <p className="text-xs">snrnsk!@</p>
+            <div className="relative">
+              <p className="text-sm text-gray-300">Test credentials</p>
+              <p className="text-xs mr-10">test@example.com</p>
+              <div className="absolute top-1 right-0 text-yellow-400">
+                <CopyText copyText="test@example.com" />
+              </div>
+              <p className="text-xs">1234abc!</p>
+              <div className="absolute bottom-[-2px] right-14 text-yellow-400">
+                <CopyText copyText="1234abc!" />
+              </div>
             </div>
           </div>
         </div>
