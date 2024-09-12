@@ -47,7 +47,7 @@ function ZoomPage() {
               </div>
               <ZoomSupport close={isClose} closeHandle={handleClose} />
               <button
-                className="absolute bottom-10 right-5"
+                className="absolute bottom-[180px] right-5"
                 onMouseEnter={handleHover}
                 onMouseLeave={handleHover}
                 onClick={handleClose}
