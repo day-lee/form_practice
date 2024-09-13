@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "./components/App";
 import HomePage from "./components/HomePage";
-import LinkedinPage from "./components/LinkedinPage";
-import ZoomPage from "./components/ZoomPage";
+import LinkedinPage from "./components/Linkedin/LinkedinPage";
+import ZoomPage from "./components/Zoom/ZoomPage";
 
 export function MainPage() {
   return (

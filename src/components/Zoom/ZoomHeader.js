@@ -1,4 +1,4 @@
-import zoomLogo from "../assets/zoom-logo.png";
+import zoomLogo from "../../assets/zoom-logo.png";
 import ZoomLanguageDropdown from "./ZoomLanguageDropdown.js";
 
 function ZoomHeader() {
@@ -20,12 +20,18 @@ function ZoomHeader() {
           />
         </div>
         <div className="flex absolute right-0 pt-4">
-          <div className="mr-1 text-black hidden sm:inline-flex font-normal">
+          <div className="mr-1 text-black hidden sm:inline-flex font-medium">
             <span>New to Zoom? </span>
           </div>
           <div className=" mr-3 sm:mr-10">
             <button
-              className="hover:underline underline-offset-2"
+              className="lg:hidden hover:underline underline-offset-2"
+              onClick={linkSignup}
+            >
+              Sign Up
+            </button>
+            <button
+              className="hidden lg:inline-block hover:underline underline-offset-2"
               onClick={linkSignup}
             >
               Sign Up Free
@@ -40,8 +46,10 @@ function ZoomHeader() {
               Support
             </button>
           </div>
-          <div className="mr-10 hover:bg-blue">
-            <ZoomLanguageDropdown />
+          <div className="">
+            <div className="mr-10">
+              <ZoomLanguageDropdown />
+            </div>
           </div>
         </div>
       </div>

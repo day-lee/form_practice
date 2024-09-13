@@ -1,7 +1,7 @@
 import LinkedinLoginInputBtn from "./LinkedinLoginInputBtn.js";
 
-import apple from "../assets/apple-logo.svg";
-import google from "../assets/google-logo.svg";
+import apple from "../../assets/apple-logo.svg";
+import google from "../../assets/google-logo.svg";
 
 function LinkedinLoginForm({
   formValues,

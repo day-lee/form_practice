@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import LinkedinLoginForm from "./LinkedinLoginForm";
 
-import linkedin from "../assets/linkedin-logo.png";
+import linkedin from "../../assets/linkedin-logo.png";
 
 const INITIAL_DATA = { email: "", password: "" };
 const DEFAULT_ERROR = { errorEmail: "", errorPassword: "", isError: false };

@@ -1,10 +1,14 @@
 function ZoomLanguageDropdown() {
   return (
     <>
-      <div className="text-zoomblue bg-white">
+      <div className="text-zoomblue ">
         <form>
           <label htmlFor="language"></label>
-          <select className="w-20" id="language" name="language">
+          <select
+            className="w-20 cursor-pointer mx-1 h-6 rounded-md hover:bg-themelightblue"
+            id="language"
+            name="language"
+          >
             <option value="English">English </option>
             <option value="Español"> Español</option>
             <option value="Deutsch"> Deutsch</option>

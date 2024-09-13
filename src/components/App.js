@@ -22,15 +22,15 @@ function App({ children }) {
           </Link>
           <div className="flex items-center">
             <div className=" flex-col sm:flex-row mr-3 hidden sm:flex">
+              <Link to="/zoom">
+                <img className="w-11 h-12" src={zoom} alt="zoom" />
+              </Link>
               <Link to="/linkedin">
                 <img
                   className="w-13 h-13 mb-2 sm:mb-0 mr-2 "
                   src={linkedin}
                   alt="linkedin"
                 />
-              </Link>
-              <Link to="/zoom">
-                <img className="w-11 h-12" src={zoom} alt="zoom" />
               </Link>
             </div>
             <div className="relative">
