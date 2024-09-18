@@ -9,24 +9,14 @@ import zoomhelpaf from "../../assets/zoom-help-2.png";
 import zoomImg from "../../assets/zoom-img.png";
 import zoomAdImg from "../../assets/zoomAd.png";
 
-/**
- * 1440px above AI companion ad - 2xl?
- * 1024px abovd left side img - lg
- *  - flex row
- *  - image change
- *
- * mobile top
- *  - flex col
- *  - image change
- */
 function ZoomPage() {
   const [isHelp, setIsHelp] = useState(false);
-  const [isHoverd, setIsHovered] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   const [isClose, setIsClose] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleHover = () => {
-    setIsHovered(!isHoverd);
+    setIsHovered(!isHovered);
   };
 
   const handleClose = () => {
@@ -34,7 +24,7 @@ function ZoomPage() {
     setIsModalOpen(false);
   };
 
-  const closeSupportModal = () => {
+  const toggleSupportModal = () => {
     setIsModalOpen(!isModalOpen);
   };
 
@@ -78,13 +68,13 @@ function ZoomPage() {
                 close={isClose}
                 closeHandle={handleClose}
                 isModalOpen={isModalOpen}
-                closeSupportModal={closeSupportModal}
+                closeSupportModal={toggleSupportModal}
               />
             </div>
           </div>
-
           <button
-            className="fixed bottom-5 right-5 "
+            className="fixed bottom-5 right-5"
+            aria-label="help button"
             onMouseEnter={handleHover}
             onMouseLeave={handleHover}
             onClick={handleClose}
@@ -92,7 +82,7 @@ function ZoomPage() {
             {isHelp && (
               <img
                 className="b-2"
-                src={isHoverd ? zoomhelpaf : zoomhelpbf}
+                src={isHovered ? zoomhelpaf : zoomhelpbf}
                 alt="help"
               />
             )}
