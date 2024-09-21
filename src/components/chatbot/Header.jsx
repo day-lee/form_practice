@@ -14,7 +14,7 @@ const Header = ({
   return (
     <div className="relative w-[428px] h-[96px] bg-white rounded-t-3xl">
       {isChatbotHeaderClose && (
-        <div className="absolute top-10 rounded-lg right-3 border-2 border-gray text-[13px] py-2 bg-white w-[222px]">
+        <div className="absolute top-10 rounded-lg right-3 border-2 border-gray text-[13px] py-2 bg-white w-[222px] z-10">
           <div className="flex items-center h-[44px] py-2 gap-4 hover:bg-zoombtnblue cursor-not-allowed">
             <div className="w-4 h-4 ml-3 ">
               <img src={microPhone} alt="microphone" />
