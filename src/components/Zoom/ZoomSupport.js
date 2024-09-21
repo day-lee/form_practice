@@ -14,7 +14,7 @@ function ZoomSupport({ close, closeHandle, isModalOpen, closeSupportModal }) {
 
   return (
     <div
-      className={`fixed right-5 bottom-5 shadow-lg rounded-lg z-50 ${
+      className={`fixed right-5 bottom-5 shadow-lg rounded-3xl z-50 ${
         close && "hidden"
       }`}
     >

@@ -1,5 +1,10 @@
 import { useEffect, useState } from "react";
 
+import Chatbot from "react-chatbot-kit";
+import ActionProvider from "../chatbot/ActionProvider";
+import "../chatbot/ChatbotOverride.css";
+import MessageParser from "../chatbot/MessageParser";
+import config from "../chatbot/config";
 import ZoomHeader from "./ZoomHeader";
 import ZoomSignin from "./ZoomSignin";
 
@@ -10,31 +15,24 @@ import zoomhelpaf from "../../assets/zoom-help-2.png";
 import zoomImg from "../../assets/zoom-img.png";
 import zoomAdImg from "../../assets/zoomAd.png";
 
-import Chatbot from "react-chatbot-kit";
-
-import ActionProvider from "../chatbot/ActionProvider";
-import "../chatbot/ChatbotOverride.css";
-import MessageParser from "../chatbot/MessageParser";
-import config from "../chatbot/config";
-
 function ZoomPage() {
   const [isHelp, setIsHelp] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
-  const [isClose, setIsClose] = useState(true);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isChatbotClose, setIsChatbotClose] = useState(true);
+  const [isChatbotHeaderClose, setIsChatbotHeaderClose] = useState(true);
 
   const handleHover = () => {
     setIsHovered(!isHovered);
   };
 
   const handleChatbotModal = () => {
-    setIsClose(!isClose);
-    setIsModalOpen(false);
+    setIsChatbotClose(!isChatbotClose);
+    setIsChatbotHeaderClose(false);
     setIsHelp(false);
   };
 
-  const toggleSupportModal = () => {
-    setIsModalOpen(!isModalOpen);
+  const toggleHeaderActionMenuModal = () => {
+    setIsChatbotHeaderClose(!isChatbotHeaderClose);
   };
 
   const validateInput = (message) => {
@@ -163,26 +161,20 @@ function ZoomPage() {
               <div className="">
                 <ZoomSignin help={isHelp} helpHandle={() => setIsHelp(true)} />
               </div>
-              {/* <ZoomSupport
-                close={isClose}
-                closeHandle={handleChatbotModal}
-                isModalOpen={isModalOpen}
-                closeSupportModal={toggleSupportModal}
-              /> */}
               <div
-                className={`fixed right-5 bottom-5 shadow-lg rounded-lg z-100 ${
-                  isClose && "hidden"
+                className={`fixed right-5 bottom-5 rounded-lg ${
+                  isChatbotClose && "hidden"
                 }`}
               >
                 <Chatbot
-                  config={config}
+                  config={config({
+                    isChatbotHeaderClose,
+                    handleChatbotModal,
+                    toggleHeaderActionMenuModal,
+                  })}
                   messageParser={MessageParser}
                   actionProvider={ActionProvider}
                   validator={validateInput}
-                  isClose={isClose}
-                  isModalOpen={isModalOpen}
-                  setIsClose={setIsClose}
-                  setIsModalOpen={setIsModalOpen}
                 />
               </div>
             </div>
