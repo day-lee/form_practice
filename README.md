@@ -6,6 +6,8 @@
 
 [Demo video](https://youtu.be/B3PuqUW9cPY)
 
+### install 
+`npm install react-chatbot-kit`
 
 ## 🗝️ Key Features 
 - Login validation
