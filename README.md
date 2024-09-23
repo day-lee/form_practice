@@ -1,7 +1,11 @@
 # [Clone coding project](https://day-lee.github.io/react-login-form/)
 ### Linkedin & Zoom login form 
 
-[![image](https://github.com/user-attachments/assets/b2bfecaa-4c44-4865-a8e8-701baf4b7376)](https://day-lee.github.io/react-login-form/)
+
+![zoomlogin](https://github.com/user-attachments/assets/99dfbfa8-a4e0-45b7-9c87-14690e583fcf)
+
+[Demo video](https://youtu.be/B3PuqUW9cPY)
+
 
 ## 🗝️ Key Features 
 - Login validation
