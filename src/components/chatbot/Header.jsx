@@ -1,7 +1,5 @@
-import downArrow from "../../assets/down-arrow.svg";
-
 import cancelCircle from "../../assets/cancelCircle.svg";
-
+import downArrow from "../../assets/down-arrow.svg";
 import downloadArrow from "../../assets/downloadArrow.svg";
 import microPhone from "../../assets/microphone.svg";
 import zoomsupport from "../../assets/zoomsupport.png";
@@ -29,7 +27,6 @@ const Header = ({
               Download Transcript
             </div>
           </div>
-
           <div
             className="flex items-center cursor-pointer h-[44px] py-2 gap-4 hover:bg-zoombtnblue"
             role="button"
